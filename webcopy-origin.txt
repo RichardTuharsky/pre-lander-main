@@ -1,0 +1,184 @@
+Uri: https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js
+File Name: C:\Downloaded Web Sites\live.info-instacams.com\ajax\libs\jquery\3.6.0\jquery.min.js
+Content Type: text/javascript
+
+Uri: https://cdn.onesignal.com/sdks/OneSignalSDK.js
+File Name: C:\Downloaded Web Sites\live.info-instacams.com\sdks\OneSignalSDK.js
+Content Type: application/javascript
+
+Uri: https://fonts.googleapis.com/css?family=Roboto:300,400,700,900
+File Name: C:\Downloaded Web Sites\live.info-instacams.com\css
+Content Type: text/css
+
+Uri: https://fonts.gstatic.com/s/roboto/v47/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWuaabVmUiA8.ttf
+File Name: C:\Downloaded Web Sites\live.info-instacams.com\s\roboto\v47\KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWuaabVmUiA8.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/roboto/v47/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWubEbVmUiA8.ttf
+File Name: C:\Downloaded Web Sites\live.info-instacams.com\s\roboto\v47\KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWubEbVmUiA8.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/roboto/v47/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWuYjalmUiA8.ttf
+File Name: C:\Downloaded Web Sites\live.info-instacams.com\s\roboto\v47\KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWuYjalmUiA8.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/roboto/v47/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWuZtalmUiA8.ttf
+File Name: C:\Downloaded Web Sites\live.info-instacams.com\s\roboto\v47\KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWuZtalmUiA8.ttf
+Content Type: font/ttf
+
+Uri: https://imedia-resize.servefilesonly.com/resize/?w=200&h=200&url=https:%2F%2Fimedia.servefilesonly.com%2F0408bca0-d898-4125-a826-d89be77b6983.jpg
+File Name: C:\Downloaded Web Sites\live.info-instacams.com\resize\0408bca0-d898-4125-a826-d89be77b6983.jpg
+Content Type: image/jpeg
+
+Uri: https://imedia-resize.servefilesonly.com/resize/?w=200&h=200&url=https:%2F%2Fimedia.servefilesonly.com%2F0bc9281e-d80b-453c-90ac-7c38e5918b1e.jpg
+File Name: C:\Downloaded Web Sites\live.info-instacams.com\resize\0bc9281e-d80b-453c-90ac-7c38e5918b1e.jpg
+Content Type: image/jpeg
+
+Uri: https://imedia-resize.servefilesonly.com/resize/?w=200&h=200&url=https:%2F%2Fimedia.servefilesonly.com%2F32613a36-a75f-4c61-a03a-f90c6b146093.jpg
+File Name: C:\Downloaded Web Sites\live.info-instacams.com\resize\32613a36-a75f-4c61-a03a-f90c6b146093.jpg
+Content Type: image/jpeg
+
+Uri: https://imedia-resize.servefilesonly.com/resize/?w=200&h=200&url=https:%2F%2Fimedia.servefilesonly.com%2F40f6b33e-8cd9-4601-b8b9-6c38aef98c07.jpg
+File Name: C:\Downloaded Web Sites\live.info-instacams.com\resize\40f6b33e-8cd9-4601-b8b9-6c38aef98c07.jpg
+Content Type: image/jpeg
+
+Uri: https://imedia-resize.servefilesonly.com/resize/?w=200&h=200&url=https:%2F%2Fimedia.servefilesonly.com%2F5c87be7c-18ca-4637-9f4b-ac1e18a0d955.jpg
+File Name: C:\Downloaded Web Sites\live.info-instacams.com\resize\5c87be7c-18ca-4637-9f4b-ac1e18a0d955.jpg
+Content Type: image/jpeg
+
+Uri: https://imedia-resize.servefilesonly.com/resize/?w=200&h=200&url=https:%2F%2Fimedia.servefilesonly.com%2F6729be38-cf66-4117-8ac0-fb9ba168521e.jpg
+File Name: C:\Downloaded Web Sites\live.info-instacams.com\resize\6729be38-cf66-4117-8ac0-fb9ba168521e.jpg
+Content Type: image/jpeg
+
+Uri: https://imedia-resize.servefilesonly.com/resize/?w=200&h=200&url=https:%2F%2Fimedia.servefilesonly.com%2F78c06cb9-6b67-4169-aa01-4cfd6010cc84.jpg
+File Name: C:\Downloaded Web Sites\live.info-instacams.com\resize\78c06cb9-6b67-4169-aa01-4cfd6010cc84.jpg
+Content Type: image/jpeg
+
+Uri: https://imedia-resize.servefilesonly.com/resize/?w=200&h=200&url=https:%2F%2Fimedia.servefilesonly.com%2Fa49d76a9-b8c4-496b-8bff-bcff8d0ca98a.jpg
+File Name: C:\Downloaded Web Sites\live.info-instacams.com\resize\a49d76a9-b8c4-496b-8bff-bcff8d0ca98a.jpg
+Content Type: image/jpeg
+
+Uri: https://imedia-resize.servefilesonly.com/resize/?w=200&h=200&url=https:%2F%2Fimedia.servefilesonly.com%2Fab5b6b69-57bb-4395-bb18-968352d46001.jpg
+File Name: C:\Downloaded Web Sites\live.info-instacams.com\resize\ab5b6b69-57bb-4395-bb18-968352d46001.jpg
+Content Type: image/jpeg
+
+Uri: https://imedia-resize.servefilesonly.com/resize/?w=200&h=200&url=https:%2F%2Fimedia.servefilesonly.com%2Fb46f47d8-a84f-4c5f-a41a-c96b2d8cc050.jpg
+File Name: C:\Downloaded Web Sites\live.info-instacams.com\resize\b46f47d8-a84f-4c5f-a41a-c96b2d8cc050.jpg
+Content Type: image/jpeg
+
+Uri: https://imedia-resize.servefilesonly.com/resize/?w=200&h=200&url=https:%2F%2Fimedia.servefilesonly.com%2Fd219fa46-9830-4450-a71e-bcfefdc9fd04.jpg
+File Name: C:\Downloaded Web Sites\live.info-instacams.com\resize\d219fa46-9830-4450-a71e-bcfefdc9fd04.jpg
+Content Type: image/jpeg
+
+Uri: https://imedia-resize.servefilesonly.com/resize/?w=200&h=200&url=https:%2F%2Fimedia.servefilesonly.com%2Fef0c3ac8-f9ae-4c13-adee-1b9592f3e1c1.jpg
+File Name: C:\Downloaded Web Sites\live.info-instacams.com\resize\ef0c3ac8-f9ae-4c13-adee-1b9592f3e1c1.jpg
+Content Type: image/jpeg
+
+Uri: https://live.info-instacams.com/assets/img/_favicons/instacams_fav.png?1604289
+File Name: C:\Downloaded Web Sites\live.info-instacams.com\assets\img\_favicons\instacams_fav.png
+Content Type: image/png
+
+Uri: https://live.info-instacams.com/landing/gml8103?subPublisher=banner:www.pornhub.com&zone=banner:www.pornhub.com&adformat=banner&auctionid=f27fad86abeb422eb56ce83149d2c2c4&uniqueid=9720aa6ae4ced187a827f1022fafc2c1&name=Trafficjunky_banner_300x250_alb-bih-bgr-cyp-cze-est-hrv-hun-kaz-ltu-lva-mda-mne-mkd-mlt-pol-rou-srb-svn-svk_desktop_randomcams_en&width=300&height=250&newservice=true&cmsid=landing--gml8103--landing--chp8119&tpcampid=26a666f0-4779-49fe-b7f6-63e7da2ac1bf&imp_tagid=30781&ba=a25dc392-67cd-4cd5-bb55-1a30e153743f&uid=IVG-9bbec1b31bdba09b15f7ec8e62d2b8b1&campaign_lp=1:landing--gml8103--landing--chp8119&product=instacams&zz=true&nextPage=%2Flanding%2Fchp8119&hit_id=108df4e4-730b-432c-a97c-b72b47ef3c04&tp_redirect_id=108df4e4-730b-432c-a97c-b72b47ef3c04&tag=108df4e4-730b-432c-a97c-b72b47ef3c04&clickId=108df4e4-730b-432c-a97c-b72b47ef3c04
+File Name: C:\Downloaded Web Sites\live.info-instacams.com\landing\gml8103.html
+Content Type: text/html
+
+Uri: https://lpmedia.servefilesonly.com/build/templates/MB/GoMeetMLP/style.min.css?1604289
+File Name: C:\Downloaded Web Sites\live.info-instacams.com\build\templates\MB\GoMeetMLP\style.min.css
+Content Type: text/css
+
+Uri: https://lpmedia.servefilesonly.com/build/widgets/loginFormBuilder/scripts.min.js?1604289
+File Name: C:\Downloaded Web Sites\live.info-instacams.com\build\widgets\loginFormBuilder\scripts.min.js
+Content Type: application/javascript
+
+Uri: https://lpmedia.servefilesonly.com/build/widgets/loginFormBuilder/styles.min.css?1604289
+File Name: C:\Downloaded Web Sites\live.info-instacams.com\build\widgets\loginFormBuilder\styles.min.css
+Content Type: text/css
+
+Uri: https://lpmedia.servefilesonly.com/build/widgets/registrationFormBuilder/scripts.min.js?1604289
+File Name: C:\Downloaded Web Sites\live.info-instacams.com\build\widgets\registrationFormBuilder\scripts.min.js
+Content Type: application/javascript
+
+Uri: https://lpmedia.servefilesonly.com/build/widgets/registrationFormBuilder/styles.min.css?1604289
+File Name: C:\Downloaded Web Sites\live.info-instacams.com\build\widgets\registrationFormBuilder\styles.min.css
+Content Type: text/css
+
+Uri: https://lpmedia.servefilesonly.com/fonts/mobirise-icons.eot?spat4u
+File Name: C:\Downloaded Web Sites\live.info-instacams.com\fonts\mobirise-icons.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://lpmedia.servefilesonly.com/fonts/mobirise-icons.svg?spat4u
+File Name: C:\Downloaded Web Sites\live.info-instacams.com\fonts\mobirise-icons.svg
+Content Type: image/svg+xml
+
+Uri: https://lpmedia.servefilesonly.com/fonts/mobirise-icons.ttf?spat4u
+File Name: C:\Downloaded Web Sites\live.info-instacams.com\fonts\mobirise-icons.ttf
+Content Type: application/octet-stream
+
+Uri: https://lpmedia.servefilesonly.com/fonts/mobirise-icons.woff?spat4u
+File Name: C:\Downloaded Web Sites\live.info-instacams.com\fonts\mobirise-icons.woff
+Content Type: application/font-woff
+
+Uri: https://lpmedia.servefilesonly.com/img/_btns/arrow_down.svg
+File Name: C:\Downloaded Web Sites\live.info-instacams.com\img\_btns\arrow_down.svg
+Content Type: image/svg+xml
+
+Uri: https://lpmedia.servefilesonly.com/img/_btns/bgElements.svg
+File Name: C:\Downloaded Web Sites\live.info-instacams.com\img\_btns\bgElements.svg
+Content Type: image/svg+xml
+
+Uri: https://lpmedia.servefilesonly.com/img/_btns/icon_account-multiple.svg
+File Name: C:\Downloaded Web Sites\live.info-instacams.com\img\_btns\icon_account-multiple.svg
+Content Type: image/svg+xml
+
+Uri: https://lpmedia.servefilesonly.com/img/_btns/icon_calendar.png
+File Name: C:\Downloaded Web Sites\live.info-instacams.com\img\_btns\icon_calendar.png
+Content Type: image/png
+
+Uri: https://lpmedia.servefilesonly.com/img/_btns/icon_cam.svg
+File Name: C:\Downloaded Web Sites\live.info-instacams.com\img\_btns\icon_cam.svg
+Content Type: image/svg+xml
+
+Uri: https://lpmedia.servefilesonly.com/img/_btns/icon_doc.svg
+File Name: C:\Downloaded Web Sites\live.info-instacams.com\img\_btns\icon_doc.svg
+Content Type: image/svg+xml
+
+Uri: https://lpmedia.servefilesonly.com/img/_btns/icon_menu.svg
+File Name: C:\Downloaded Web Sites\live.info-instacams.com\img\_btns\icon_menu.svg
+Content Type: image/svg+xml
+
+Uri: https://lpmedia.servefilesonly.com/img/_btns/icon_profile.svg
+File Name: C:\Downloaded Web Sites\live.info-instacams.com\img\_btns\icon_profile.svg
+Content Type: image/svg+xml
+
+Uri: https://lpmedia.servefilesonly.com/img/_btns/icon_profile_mobile.svg
+File Name: C:\Downloaded Web Sites\live.info-instacams.com\img\_btns\icon_profile_mobile.svg
+Content Type: image/svg+xml
+
+Uri: https://lpmedia.servefilesonly.com/img/_btns/icon_settings.svg
+File Name: C:\Downloaded Web Sites\live.info-instacams.com\img\_btns\icon_settings.svg
+Content Type: image/svg+xml
+
+Uri: https://lpmedia.servefilesonly.com/img/_logos/logo_instacams_w.svg
+File Name: C:\Downloaded Web Sites\live.info-instacams.com\img\_logos\logo_instacams_w.svg
+Content Type: image/svg+xml
+
+Uri: https://lpmedia.servefilesonly.com/img/_patterns/apple-touch-icon.png?1604289
+File Name: C:\Downloaded Web Sites\live.info-instacams.com\img\_patterns\apple-touch-icon.png
+Content Type: image/png
+
+Uri: https://lpmedia.servefilesonly.com/js/popwin.js?1604289
+File Name: C:\Downloaded Web Sites\live.info-instacams.com\js\popwin.js
+Content Type: application/javascript
+
+Uri: https://lpmedia.servefilesonly.com/style/layout/animation.css?1604289
+File Name: C:\Downloaded Web Sites\live.info-instacams.com\style\layout\animation.css
+Content Type: text/css
+
+Uri: https://lpmedia.servefilesonly.com/style/plugins/mobirise-icons.css
+File Name: C:\Downloaded Web Sites\live.info-instacams.com\style\plugins\mobirise-icons.css
+Content Type: text/css
+
+Uri: https://lpmedia.servefilesonly.com/widgets/corner/corner.css?1604289
+File Name: C:\Downloaded Web Sites\live.info-instacams.com\widgets\corner\corner.css
+Content Type: text/css
+

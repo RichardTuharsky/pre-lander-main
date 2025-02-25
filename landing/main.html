@@ -1,0 +1,626 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>ROYALCAM</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="language" content="en-GB">
+        <meta http-equiv="content-language" content="en-GB">
+        <meta name="description" content="info-instacams.com">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+        <link rel="icon" type="image/png" href="../assets/img/_favicons/favicon.png">
+        <link rel="apple-touch-icon" href="../img/_patterns/apple-touch-icon.png?1604289">
+        <meta name="logo" content="https://lpmedia.servefilesonly.com/img/_logos/logoroyal.png">
+        <meta name="parentHost" content="info-instacams.com">        
+        <link rel="stylesheet" href="../build/widgets/registrationFormBuilder/styles.min.css?1604289">
+        <link rel="stylesheet" href="../build/widgets/loginFormBuilder/styles.min.css?1604289">
+        <link rel="stylesheet" href="../style/layout/animation.css?1604289">
+        <link rel="stylesheet" href="../widgets/corner/corner.css?1604289">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link href="../css?family=Roboto:300,400,700,900" rel="stylesheet">
+        <link rel="stylesheet" href="../build/templates/MB/GoMeetMLP/style.min.css?1604289">
+        
+        <script src="../sdks/OneSignalSDK.js" async=""></script>
+        <script>
+            var OneSignal = window.OneSignal || [];
+            OneSignal.push(function () {
+                OneSignal.init({
+                    appId: "28ed652a-1a73-4668-9be5-ee284c480ecd",
+                    notifyButton: {
+                        enable: false,
+                    },
+                    welcomeNotification: {
+                        disable: true
+                    },
+                    promptOptions: {
+                        slidedown: {
+                            prompts: [
+                                {
+                                    type: "push",
+                                    enabled: true,
+                                    autoPrompt: true,
+                                    text: {
+                                        actionMessage: "Dievčatá z vašej oblasti by vám chceli posielať správy :-)",
+                                        acceptButton: "Povoliť",
+                                        cancelButton: "nie, ďakujem"
+                                    },
+                                    delay: {
+                                        pageViews: 0,
+                                        timeDelay: 0
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                });
+
+                OneSignal.getUserId(function (id) {
+                    const queryString = window.location.search;
+                    const urlParams = new URLSearchParams(queryString);
+                    const oSig = urlParams.get('osig_externalid');
+
+                    if (id != null && !oSig) {
+                        let newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + 
+                            document.location.search + '&osig_externalid=' + id + '::' + OneSignal.config.appId;
+                        window.history.pushState({path: newurl}, '', newurl);
+                    }
+                });
+
+                OneSignal.on('subscriptionChange', async function (isSubscribed) {
+                    let osig_externalid = await OneSignal.getUserId();
+                    const queryString = window.location.search;
+                    const urlParams = new URLSearchParams(queryString);
+                    const name = urlParams.get('name');
+                    const uid = urlParams.get('uid');
+                    const campaign_lp = urlParams.get('campaign_lp');
+                    const ba = urlParams.get('ba');
+                    const product = urlParams.get('product');
+                    const oSig = urlParams.get('osig_externalid');
+
+                    if (osig_externalid != null && !oSig) {
+                        let newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + 
+                            document.location.search + '&osig_externalid=' + osig_externalid + '::' + OneSignal.config.appId;
+                        window.history.pushState({path: newurl}, '', newurl);
+                    }
+
+                    if (name != null) {
+                        OneSignal.sendTags({
+                            name: name,
+                            campaign_lp: campaign_lp,
+                            ba: ba,
+                            product: product,
+                        });
+                    }
+
+                    if (uid != null) {
+                        OneSignal.setExternalUserId(uid);
+                    }
+                });
+            });
+        </script>
+
+        <!--tracking analytics-->
+
+    </head>
+
+    <body class="language-en">
+        <div class="wrapper ">
+            <!-- <div class="header">
+                <div class="inner-header">
+                    <div class="logo">
+                        <img src="../img/_logos/logoroyal.png" alt="info-instacams.com">
+                    </div>
+                    
+                    <div class="login-form">
+                        <a href="/" class="btn btn-login js-btn-open-login">Login</a>
+                        <div class="btn-nav">
+                            <input type="checkbox">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <p>
+                                <a href="/" class="btn btn-login js-btn-open-login">Login</a>
+                            </p>
+                        </div>
+                        <div class="login-form-holder js-login-form-holder hidden">
+                            <div class="login-form-holder-inner">
+                                <form id="login-form" action="/user/login" method="post" data-submit-type="ajax">
+                                    <a href="/" class="btn-close js-btn-close-login">×</a>
+                                    <p class="headline-member">Already a member?</p>
+                                    <div class="form-group login-username">
+                                        <input type="text" class="form-control" id="login_username" name="login_username" 
+                                            data-username-required-message="Your email address is invalid or not allowed." 
+                                            data-email-invalid-message="Your email address is invalid or not allowed." 
+                                            placeholder="Email address">
+                                    </div>
+                                    <div class="form-group login-password">
+                                        <input type="password" class="form-control" id="login_password" name="login_password" 
+                                            data-password-required-message="Your password is invalid." 
+                                            placeholder="Password">
+                                    </div>
+                                    <div class="js-errors"></div>
+                                    <div class="btn-group">
+                                        <button id="login_submit" class="btn-submit" 
+                                            data-login-fail-message="Email address or password is not recognised." 
+                                            data-username-fail-message="Email address or password is not recognised." 
+                                            data-password-fail-message="Email address or password is not recognised." 
+                                            type="submit">Login</button>
+                                    </div>
+                                    <input type="hidden" name="trk" value="info-instacams.com">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+            <div class="wrapper-banner">
+                <div class="content display-desktop">
+                    <div class="content-wrapper">
+                        <h1 class="title">LET'S CUM!</h1>
+                        <p class="description"> Jerk Off with Horny Strangers!</p>
+                        <button class="start-chat">
+                            <img src="../img/_btns/icon_cam.svg" alt="fly">
+                            <p class="txt-bold"> START NOW! </p>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="banner-content">
+                    <div class="banner-item">
+                        <div class="image-wrapper">
+                            <img src="../resize/1.jpg" 
+                                alt="img1" class="avatar">
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="../resize/4.jpg" 
+                                alt="img2" class="avatar">
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="../resize/3.jpg" 
+                                alt="img3" class="avatar">
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="../resize/2.jpg" 
+                                alt="img4" class="avatar">
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="../resize/5.jpg" 
+                                alt="img5" class="avatar">
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="../resize/6.jpg" 
+                                alt="img2" class="avatar">
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="../resize/1.jpg" 
+                                alt="img3" class="avatar">
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="../resize/3.jpg" 
+                                alt="img4" class="avatar">
+                        </div>
+                    </div>
+                    
+                    <div class="banner-item">
+                        <div class="image-wrapper">
+                            <img src="../resize/7.jpg" 
+                                alt="img5" class="avatar">
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="../resize/8.jpg" 
+                                alt="img6" class="avatar">
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="../resize/9.png" 
+                                alt="img7" class="avatar">
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="../resize/10.jpg" 
+                                alt="img8" class="avatar">
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="../resize/11.jpg" 
+                                alt="img5" class="avatar">
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="../resize/12.jpg" 
+                                alt="img6" class="avatar">
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="../resize/13.jpg" 
+                                alt="img7" class="avatar">
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="../resize/14.jpg" 
+                                alt="img8" class="avatar">
+                        </div>
+                    </div>
+                    
+                    <div class="banner-item">
+                        <div class="image-wrapper">
+                            <img src="../resize/15.jpg" 
+                                alt="img9" class="avatar">
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="../resize/16.jpg" 
+                                alt="img10" class="avatar">
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="../resize/17.jpg" 
+                                alt="img11" class="avatar">
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="../resize/18.jpg" 
+                                alt="img12" class="avatar">
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="../resize/19.jpg" 
+                                alt="img9" class="avatar">
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="../resize/20.jpg" 
+                                alt="img10" class="avatar">
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="../resize/21.jpg" 
+                                alt="img11" class="avatar">
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="../resize/22.jpg" 
+                                alt="img12" class="avatar">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-overload"></div>
+                <div class="menu-desktop">
+                    <ul class="menu-list desktop">
+                        <li class="menu-list__icon1">
+                            <img src="../img/_btns/icon_doc.svg" alt="">
+                        </li>
+                        <li class="menu-list__icon2">
+                            <img src="../img/_btns/icon_account-multiple.svg" alt="">
+                        </li>
+                        <li class="menu-list__icon3">
+                            <img src="../img/_btns/icon_menu.svg" alt="">
+                        </li>
+                        <li class="menu-list__icon4">
+                            <img src="../img/_btns/icon_settings.svg" alt="">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="content-blur"> </div>
+            
+            <div class="menu">
+                <ul class="menu-list">
+                    <li>
+                        <img src="../img/_btns/icon_cam.svg" alt="">
+                    </li>
+                    <li>
+                        <img src="../img/_btns/icon_doc.svg" alt="">
+                    </li>
+                    <li>
+                        <img src="../img/_btns/icon_profile_mobile.svg" alt="">
+                    </li>
+                </ul>
+                <div class="footer">
+                </div>
+            </div>
+            
+            <div class="register-box hidden">
+                <div class="registration-form-builder ">
+                    <div class="registration-form-builder-inner">
+                        <i class="btn-close js-btn-close-form">×</i>
+                        <div class="headline txt-yellow"> 
+                            <img class="headline-logo" src="../img/_logos/logoroyal.png" alt="info-instacams.com">
+                            <p class="headline-count counter" data-count="122988">122.988</p>
+                            <p class="headline-description"> are masturbating live online</p>
+                        </div>
+                        
+                        <div class="form-inner ">
+                            <div class="step step-fields js-step step-1" data-step="step1">
+                                <div class="step-inner ">
+                                    <p class="headline-1">Would you like to jerk off in a 1 on 1 video call with a random stranger?</p>
+                                    <div class="btn-group txt-flex">
+                                        <button type="button" class="btn btn-yes  js-next-step btn-green text-upercase txt-bold txt-flex1">YES</button>
+                                        <button type="button" class="btn btn-yes  btn-redirect btn-pink text-upercase txt-bold txt-flex1">NO</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="step step-fields js-step step-hidden" data-step="step2">
+                                <div class="step-inner ">
+                                    <p class="headline-1">Will you turn on your cam so she can watch you pound your cock?</p>
+                                    <div class="btn-group txt-flex">
+                                        <button type="button" class="btn btn-yes  js-next-step btn-green text-upercase txt-bold txt-flex1">YES</button>
+                                        <button type="button" class="btn btn-yes   btn-redirect btn-pink text-upercase txt-bold txt-flex1">NO</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="step step-fields js-step step-hidden" data-step="step3">
+                                <div class="step-inner ">
+                                    <p class="headline-1">Find the perfect masturbation partner to jerk off with, no strings attached!</p>
+                                    <div class="btn-group ">
+                                        <button type="button" class="btn  btn-default  js-next-step btn-green-bold text-upercase txt-white txt-bold">CONTINUE</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="step step-fields js-step step-hidden" data-step="step4">
+                                <div class="step-inner ">
+                                    <p class="headline-1">Watch her follow your commands on screen for as long as you want.</p>
+                                    <div class="btn-group txt-flex">
+                                        <button type="button" class="btn  btn-default  js-next-step btn-green-bold text-upercase txt-white txt-bold">CONTINUE</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="step step-fields js-step step-hidden" data-step="step5">
+                                <div class="step-inner ">
+                                    <p class="headline-1">Jerk off with as many women as you want without feeling guilty!</p>
+                                    <div class="btn-group txt-flex">
+                                        <button type="button" class="btn  btn-default  js-next-step btn-green-bold text-upercase js-animation txt-white txt-bold">CONTINUE</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="step step-fields js-step step-hidden processing-bar-step" data-step="step6">
+                                <div class="step-inner ">
+                                    <p class="headline-1">Checking availability of online members...</p>
+                                    <div class="js-processing-bar loading-bar" data-timeout="4000">
+                                        <span></span>
+                                        <p></p>
+                                    </div>
+                                    <div class="btn-group ">
+                                        <button type="button" class="btn btn-default js-next-step  hidden">NOPE</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="step step-fields js-step step-hidden" data-step="step7">
+                                <div class="step-inner">
+                                    <p class="headline-2">Get Exclusive Access to Private 1-on-1 Video Calls with Hot Women!</p>
+                                    <p class="headline-2">Enter your email to receive instant access and never be alone again!</p>
+                                    <form action="your-email-handler-url" method="POST">
+                                        <div class="input-group">
+                                            <input type="email" name="email" class="form-control" placeholder="Enter your email" required>
+                                        </div>
+                                        <div class="btn-group">
+                                            <button type="submit" class="btn btn-default text-uppercase txt-bold">GET ACCESS NOW</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            
+                            <div class="step step-fields js-step step-hidden" data-step="step7">
+                                <div class="step-inner ">
+                                    <p class="headline-2">321 horny women are waiting to masturbate with you in 1 on 1 video calls!</p>
+                                    <p class="headline-2">Experience a simultaneous orgasm with your partner and you'll never jerk off alone again!</p>
+                                    <div class="btn-group ">
+                                        <a href="tracking link" class="btn btn btn-default js-next-step text-upercase txt-bold">LET ME IN!</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                           
+                            
+                        </div>
+                        
+                        <div class="progress-bar-wrapper">
+                            <ul class="progress-bar js-progress-bar">
+                                <li class="active visited"></li>
+                                <li class=""></li>
+                                <li class=""></li>
+                                <li class=""></li>
+                                <li class=""></li>
+                                <li class=""></li>
+                                <li class=""></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script src="../ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript" src="../build/widgets/registrationFormBuilder/scripts.min.js?1604289"></script>
+        <script type="text/javascript" src="../build/widgets/loginFormBuilder/scripts.min.js?1604289"></script>
+        <script type="text/javascript" src="../js/popwin.js?1604289"></script>
+
+      
+
+        <script>
+            function populateLinks(linkToPopulate) {
+                let currentUrl = new URL("s5 na moju landing page");
+                let queryString = '?' + currentUrl.searchParams.toString();
+                let links = document.getElementsByTagName("a");
+                for (let i = 0; i < links.length; i++) {
+                    if (links[i].href === linkToPopulate) {
+                        if ("/landing/chp8119" !== 'null') {
+                            links[i].href = "/landing/chp8119" + queryString;
+                        } else {
+                            links[i].href = linkToPopulate + queryString;
+                        }
+                    } else {
+                        let newLink = links[i].href.substring(0, links[i].href.lastIndexOf('/'));
+                        let newLinkToPopulate = linkToPopulate.substring(0, linkToPopulate.lastIndexOf('/'));
+                        if (newLink === newLinkToPopulate) {
+                            links[i].href = links[i].href + queryString;
+                        }
+                    }
+                }
+            }
+            //tracking na kliky
+        </script>
+        
+        <script>
+            jQuery(document).ready(function () {
+                const queryString = window.location.search;
+                const urlParams = new URLSearchParams(queryString);
+                const pathName = window.location.pathname.replace("/landing/", '');
+                const cmsId = urlParams.get('cmsid');
+                const campaign = urlParams.get('name');
+                let isMlp = false;
+
+                if (cmsId != null) {
+                    const mlp = cmsId.split("--")[1];
+                    if (mlp == pathName) {
+                        isMlp = true;
+                    }
+                }
+
+                if (isMlp) {
+                    var popTrigger = 0;
+                    var testpop = function (site) {
+                        if (popTrigger < 1) {
+                            popTrigger++;
+                            window.open(site);
+                            var interval = 500;
+                            window.setTimeout(function () {
+                                window.location.href = "https://eu-adsrv-cached.rtbsuperhub.com/ir/?placement=49773410-5c8a-4b5f-9acc-76786153a2ef&subPublisher=" + campaign;
+                            }, interval);
+                        }
+                    };
+
+                    function checkADNPOP(name, callback) {
+                        var interval = 500;
+                        window.setTimeout(function () {
+                            callback(window[name]);
+                            window.setTimeout(checkADNPOP, interval, name, callback);
+                        }, interval);
+                    }
+
+                    checkADNPOP("ADNPOP", function () {
+                        jQuery(function () {
+                            $("a").each(function (index) {
+                                if ($(this).attr('href') !== undefined) {
+                                    if ($(this).attr('href').indexOf("landing/") !== -1) {
+                                        $(this).unbind('click').bind('click', function (e) {
+                                            e.preventDefault();
+                                            if (e.target.href) {
+                                                testpop(e.target.href);
+                                            } else {
+                                                testpop(e.currentTarget.href);
+                                            }
+                                        });
+                                    }
+                                }
+                            });
+                        });
+                    });
+                }
+            });
+        </script>
+
+        <script>
+            $(function() {
+                $('.login-form').addClass('enable');
+                $('.btn-close').click(function () {
+                    $('.login-form-holder').addClass('hidden');
+                    $('.register-box').addClass('hidden');
+                    $('.wrapper').removeClass('dark');
+                    if ($(this).hasClass('js-btn-close-login')) {
+                        // $('.login-form > a').toggleClass('hidden');
+                    }
+                });
+
+                $('.login-form > a').click(function () {
+                    $('.wrapper').addClass('dark');
+                    // $('.login-form > a').toggleClass('hidden');
+                    $('.wrapper.dark').click(function (e) {
+                        e.stopPropagation();
+                    });
+                });
+
+                $('.icon-list-header li, .menu-list li').click(function(e){
+                    $('.register-box').toggleClass('hidden');
+                    $('.wrapper').toggleClass('dark');
+                    e.stopImmediatePropagation();
+                });
+
+                $('.start-chat').click(function (e) {
+                    $('.register-box').toggleClass('hidden');
+                    $('.wrapper').toggleClass('dark');
+                    e.stopImmediatePropagation();
+                });
+
+                $('.login-form, .registration-form-builder').click(function (e) {
+                    e.stopPropagation();
+                });
+            });
+
+            $('.js-animation').on('click' , function(){
+                var $processingBar = $('.js-processing-bar'),
+                    timeout = $processingBar.attr('data-timeout'),
+                    percent = 0,
+                    $processingEle = $processingBar.find('span'),
+                    $processingPercent = $processingBar.find('p'),
+                    $processingButton = $('.processing-bar-step').find('.btn');
+
+                var processingTimer = setInterval( function() {
+                    percent++;
+                    $processingEle.css({ 'width': percent + '%' });
+                    $processingPercent.text( percent + '%');
+                    if (percent >= 100) {
+                        clearInterval(processingTimer);
+                        $processingButton.trigger('click');
+                    }
+                }, timeout / 100);
+            });
+
+            $('.btn-redirect').click(function(){
+                function getValues(str){
+                    let tmpArray = str.split('&');
+                    let final = '';
+                    for(let i=0 ; i<tmpArray.length ; i++){
+                        if(tmpArray[i].split('=')[1] != '' && tmpArray[i].split('=')[1] != 'null'){
+                            final += tmpArray[i] + '&';
+                        }  
+                    }
+                    return final.substr(0,final.length-1);
+                }
+                
+                let link ="pridat novy link";
+                window.location.href = getValues(link) ?? link ;
+            });
+
+            function getRndInteger(min, max) {
+                return Math.floor(Math.random() * (max - min + 1) ) + min;
+            }
+            
+            function updateUserCount() {
+                var textCount = $('.counter').eq(0), 
+                    count = textCount.data('count'),
+                    randomCount = getRndInteger(4, 10), 
+                    newCount = count+randomCount;
+                textCount.data('count', newCount);
+                $('.counter').html(new Intl.NumberFormat('de-DE').format(newCount));
+                randomInterval = getRndInteger(3, 5) * 1000;
+                setTimeout(updateUserCount, randomInterval);
+            }
+            
+            var randomInterval = getRndInteger(3, 5) * 1000;
+            setTimeout(updateUserCount, randomInterval);
+
+            function insertParamsToURL(key, value) {
+                var selectedName = value,
+                    url = window.location.pathname,
+                    params = window.location.search.replace('?', '').split('&'),
+                    newParams = [];
+
+                for (var i = 0; i < params.length; i++) {
+                    if (params[i].indexOf(key + '=') < 0 && params[i] != '') {
+                        newParams.push(params[i]);
+                    }
+                }
+
+                url += '?' + key + '=' + selectedName + (newParams.length > 0 ? '&' + newParams.join('&') : '');
+                window.history.replaceState(null, null, url);
+            }
+        </script>
+    </body>
+</html>
