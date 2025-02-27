@@ -1,732 +1,658 @@
-﻿                    
-                                    
-    <!DOCTYPE html>
-    <html lang="en">
-        <head>
-            
-
-<title>info-instacams.com</title>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="language" content="en-GB">
-<meta http-equiv="content-language" content="en-GB">
-<meta name="description" content="info-instacams.com">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-<link rel="icon" type="image/png" href="../assets/img/_favicons/instacams_fav-1.png?1612292">
-<link rel="apple-touch-icon" href="../img/_patterns/apple-touch-icon-1.png?1612292">
-<meta name="logo" content="https://lpmedia.servefilesonly.com/img/_logos/logo_instacams_w.svg">
-<meta name="parentHost" content="info-instacams.com">            
-            <link rel="stylesheet" href="../build/widgets/registrationFormBuilder/styles.min-1.css?1612292">
-<link rel="stylesheet" href="../build/widgets/loginFormBuilder/styles.min-1.css?1612292">
-<link rel="stylesheet" href="../style/layout/animation-1.css?1612292">
-<link rel="stylesheet" href="../widgets/corner/corner-1.css?1612292">
-
-            <link href="../font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" rel="stylesheet">
-            <link href="../css-1?family=Roboto:400,700|Lato:300,700" rel="stylesheet">
-            <link rel="stylesheet" href="../build/templates/InstaCams/style-modal.min.css?1612292">
-                             <script src="../sdks/OneSignalSDK-1.js" async=""></script>
-<script>
-    var OneSignal = window.OneSignal || [];
-    OneSignal.push(function () {
-        OneSignal.init({
-            appId:  "28ed652a-1a73-4668-9be5-ee284c480ecd",
-
-        notifyButton: {
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>info-instacams.com</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="language" content="en-GB">
+    <meta http-equiv="content-language" content="en-GB">
+    <meta name="description" content="info-instacams.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <link rel="icon" type="image/png" href="../assets/img/_favicons/instacams_fav-1.png?1612292">
+    <link rel="apple-touch-icon" href="../img/_patterns/apple-touch-icon-1.png?1612292">
+    <meta name="logo" content="https://lpmedia.servefilesonly.com/img/_logos/logo_instacams_w.svg">
+    <meta name="parentHost" content="info-instacams.com">
+    <link rel="stylesheet" href="../build/widgets/registrationFormBuilder/styles.min-1.css?1612292">
+    <link rel="stylesheet" href="../build/widgets/loginFormBuilder/styles.min-1.css?1612292">
+    <link rel="stylesheet" href="../style/layout/animation-1.css?1612292">
+    <link rel="stylesheet" href="../widgets/corner/corner-1.css?1612292">
+    <link href="../font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+    <link href="../css-1?family=Roboto:400,700|Lato:300,700" rel="stylesheet">
+    <link rel="stylesheet" href="../build/templates/InstaCams/style-modal.min.css?1612292">
+    <script src="../sdks/OneSignalSDK-1.js" async=""></script>
+    <script>
+        var OneSignal = window.OneSignal || [];
+        OneSignal.push(function () {
+            OneSignal.init({
+                appId: "28ed652a-1a73-4668-9be5-ee284c480ecd",
+                notifyButton: {
                     enable: false,
                 },
-
-        welcomeNotification: {
-            disable: true
-        },
-
-        promptOptions: {
-            slidedown: {
-                prompts: [
-                    {
-                        type: "push",
-                        enabled: true,
-                        autoPrompt: true,
-                        text: {
-                            actionMessage: "Dievčatá z vašej oblasti by vám chceli posielať správy :-)",
-                            acceptButton: "Povoliť",
-                            cancelButton: "nie, ďakujem"
-                        },
-                        delay: {
-                            pageViews: 0,
-                            timeDelay: 0
-                        }
+                welcomeNotification: {
+                    disable: true
+                },
+                promptOptions: {
+                    slidedown: {
+                        prompts: [
+                            {
+                                type: "push",
+                                enabled: true,
+                                autoPrompt: true,
+                                text: {
+                                    actionMessage: "Dievčatá z vašej oblasti by vám chceli posielať správy :-)",
+                                    acceptButton: "Povoliť",
+                                    cancelButton: "nie, ďakujem"
+                                },
+                                delay: {
+                                    pageViews: 0,
+                                    timeDelay: 0
+                                }
+                            }
+                        ]
                     }
-                ]
-            }
-        }
-        });
+                }
+            });
 
-        OneSignal.getUserId(function (id) {
-
+            OneSignal.getUserId(function (id) {
                 const queryString = window.location.search;
                 const urlParams = new URLSearchParams(queryString);
                 const oSig = urlParams.get('osig_externalid');
 
                 if (id != null && !oSig) {
-
                     let newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + document.location.search + '&osig_externalid=' + id + '::' + OneSignal.config.appId;
                     window.history.pushState({path: newurl}, '', newurl);
                 }
-            }
-        );
+            });
 
-        OneSignal.on('subscriptionChange', async function (isSubscribed) {
-            let osig_externalid = await OneSignal.getUserId();
+            OneSignal.on('subscriptionChange', async function (isSubscribed) {
+                let osig_externalid = await OneSignal.getUserId();
 
-            const queryString = window.location.search;
-            const urlParams = new URLSearchParams(queryString);
-            const name = urlParams.get('name')
-            const uid = urlParams.get('uid')
-            const campaign_lp = urlParams.get('campaign_lp')
-            const ba = urlParams.get('ba')
-            const product = urlParams.get('product')
-            const oSig = urlParams.get('osig_externalid')
+                const queryString = window.location.search;
+                const urlParams = new URLSearchParams(queryString);
+                const name = urlParams.get('name');
+                const uid = urlParams.get('uid');
+                const campaign_lp = urlParams.get('campaign_lp');
+                const ba = urlParams.get('ba');
+                const product = urlParams.get('product');
+                const oSig = urlParams.get('osig_externalid');
 
-            if (osig_externalid != null && !oSig) {
-                let newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + document.location.search + '&osig_externalid=' + osig_externalid + '::' + OneSignal.config.appId;
-                window.history.pushState({path: newurl}, '', newurl);
-            }
+                if (osig_externalid != null && !oSig) {
+                    let newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + document.location.search + '&osig_externalid=' + osig_externalid + '::' + OneSignal.config.appId;
+                    window.history.pushState({path: newurl}, '', newurl);
+                }
 
-            if (name != null) {
-                OneSignal.sendTags({
-                    name: name,
-                    campaign_lp: campaign_lp,
-                    ba: ba,
-                    product: product,
-                });
-            }
+                if (name != null) {
+                    OneSignal.sendTags({
+                        name: name,
+                        campaign_lp: campaign_lp,
+                        ba: ba,
+                        product: product,
+                    });
+                }
 
-            if (uid != null) {
-                OneSignal.setExternalUserId(uid);
-            }
-        })
-
-    });
-</script>
-<script>
-  var _mtm = window._mtm = window._mtm || [];
-  _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
-  (function() {
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.async=true; g.src='/cmstrk/container_2jdjewzR.js'; s.parentNode.insertBefore(g,s);
-  })();
-</script>
-
-
-                                                 
-                            <style>
-                    .video-frame.isEmojis .next-video,.bn-main .bn-body.start-searching .body-3 .video-frame .video-btns button.next-video {
-                        background-color: #c63a82;
-                        color: #fff;
-                    }
-                    .video-frame .next-video{
-                        background-color: #c63a82;
-                        color: #fff;
-                        font-size: 1.18em;
-                        padding: 0.3em 0.7em;
-                    }
-                        
-                </style>
-                                                        <link rel="stylesheet" href="../build/templates/InstaCams/badges.min.css?1612292">
-                            <link rel="stylesheet" href="../build/templates/InstaCams/trust.min.css?1612292">
-                                        </head>
-
-        <body class="language-en">
-            <div class="wrapper">
-                             <div class="banner">
-    <div class="bn-header">
-        <img src="../img/_logos/logo_instacams.svg" alt="info-instacams.com" width="100%" height="100%">
-    </div>
-    <div class="bn-modal " style="background-image: url(../85a0c899-05ca-4ccd-ac95-472e0eafbeb3.jpg)">
-                          <div class="bn-gender">
-            <p>You are...</p>
-            <ul>
-                <li class="gender-male" data-gender="MALE"><i></i><span>Male</span></li>
-                <li class="gender-female" data-gender="FEMALE"><i></i><span>Female</span></li>
-            </ul>
-                      </div>
-        <div class="bn-loading active">
-            <img src="../img/_logos/logo_instacams.svg" alt="info-instacams.com" width="100%" height="100%">
-            <span>Loading...</span>
-        </div>
-        <div class="bn-main">
-            <div class="bn-head">
-                <div class="head-mobile">
-                    <i class="show-menu icon-burger-bars"></i>
-                    <img src="../img/_logos/logo_instacams.svg" alt="info-instacams.com" width="100%" height="100%">
-                    <i class="  show-popup icon-user cascade1" data-show="login"></i>
-                    <i class="close-menu icon-close"></i>
-                </div>
-                <div class="head-desktop">
+                if (uid != null) {
+                    OneSignal.setExternalUserId(uid);
+                }
+            });
+        });
+    </script>
+    <script>
+        var _mtm = window._mtm = window._mtm || [];
+        _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
+        (function() {
+            var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+            g.async = true;
+            g.src = '/cmstrk/container_2jdjewzR.js';
+            s.parentNode.insertBefore(g, s);
+        })();
+    </script>
+    <style>
+        .video-frame.isEmojis .next-video,
+        .bn-main .bn-body.start-searching .body-3 .video-frame .video-btns button.next-video {
+            background-color: #c63a82;
+            color: #fff;
+        }
+        .video-frame .next-video {
+            background-color: #c63a82;
+            color: #fff;
+            font-size: 1.18em;
+            padding: 0.3em 0.7em;
+        }
+    </style>
+    <link rel="stylesheet" href="../build/templates/InstaCams/badges.min.css?1612292">
+    <link rel="stylesheet" href="../build/templates/InstaCams/trust.min.css?1612292">
+</head>
+<body class="language-en">
+    <div class="wrapper">
+        <div class="banner">
+            <div class="bn-header">
+                <img src="../img/_logos/logo_instacams.svg" alt="info-instacams.com" width="100%" height="100%">
+            </div>
+            <div class="bn-modal" style="background-image: url(../85a0c899-05ca-4ccd-ac95-472e0eafbeb3.jpg)">
+                <div class="bn-gender">
+                    <p>You are...</p>
                     <ul>
-                                                    <li class="show-popup" data-show="login">Login</li>
-                                                    <li class="show-popup" data-show="settings">Settings</li>
-                                                    <li class="show-popup" data-show="support"><i class="icon-support"></i>Support</li>
+                        <li class="gender-male" data-gender="MALE"><i></i><span>Male</span></li>
+                        <li class="gender-female" data-gender="FEMALE"><i></i><span>Female</span></li>
+                    </ul>
+                </div>
+                <div class="bn-loading active">
+                    <img src="../img/_logos/logo_instacams.svg" alt="info-instacams.com" width="100%" height="100%">
+                    <span>Loading...</span>
+                </div>
+                <div class="bn-main">
+                    <div class="bn-head">
+                        <div class="head-mobile">
+                            <i class="show-menu icon-burger-bars"></i>
+                            <img src="../img/_logos/logo_instacams.svg" alt="info-instacams.com" width="100%" height="100%">
+                            <i class="show-popup icon-user cascade1" data-show="login"></i>
+                            <i class="close-menu icon-close"></i>
+                        </div>
+                        <div class="head-desktop">
+                            <ul>
+                                <li class="show-popup" data-show="login">Login</li>
+                                <li class="show-popup" data-show="settings">Settings</li>
+                                <li class="show-popup" data-show="support"><i class="icon-support"></i>Support</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bn-body">
+                        <div class="modal-box">
+                            <div class="registration-form-builder">
+                                <div class="registration-form-builder-inner">
+                                    <div class="form-header">
+                                        <div class="video-frame">
+                                            <span class="live-video">LIVE</span>
+                                            <div class="video-wrapper">
+                                                <video class="video-clip" width="100%" preload="none" playsinline="" muted="">
+                                                    <source src="../Randomcams_Videos/FSK18/chp-fsk18-19.mp4" type="video/mp4">
+                                                    Your browser does not support the video tag.
+                                                </video>
+                                                <video class="video-clip" width="100%" preload="none" playsinline="" muted="">
+                                                    <source src="../Randomcams_Videos/FSK18/chp-fsk18-08.mp4" type="video/mp4">
+                                                    Your browser does not support the video tag.
+                                                </video>
+                                                <video class="video-clip" width="100%" preload="none" playsinline="" muted="">
+                                                    <source src="../Randomcams_Videos/FSK18/chp-fsk18-15.mp4" type="video/mp4">
+                                                    Your browser does not support the video tag.
+                                                </video>
+                                                <video class="video-clip" width="100%" preload="none" playsinline="" muted="">
+                                                    <source src="../Randomcams_Videos/FSK18/chp-fsk18-23.mp4" type="video/mp4">
+                                                    Your browser does not support the video tag.
+                                                </video>
+                                                <video class="video-clip" width="100%" preload="none" playsinline="" muted="">
+                                                    <source src="../Randomcams_Videos/FSK18/chp-fsk18-22.mp4" type="video/mp4">
+                                                    Your browser does not support the video tag.
+                                                </video>
+                                                <video class="video-clip" width="100%" preload="none" playsinline="" muted="">
+                                                    <source src="../Randomcams_Videos/FSK18/chp-fsk18-16.mp4" type="video/mp4">
+                                                    Your browser does not support the video tag.
+                                                </video>
+                                                <video class="video-clip" width="100%" preload="none" playsinline="" muted="">
+                                                    <source src="../Randomcams_Videos/FSK18/chp-fsk18-21.mp4" type="video/mp4">
+                                                    Your browser does not support the video tag.
+                                                </video>
+                                                <video class="video-clip" width="100%" preload="none" playsinline="" muted="">
+                                                    <source src="../Randomcams_Videos/FSK18/chp-fsk18-06.mp4" type="video/mp4">
+                                                    Your browser does not support the video tag.
+                                                </video>
+                                                <video class="video-clip" width="100%" preload="none" playsinline="" muted="">
+                                                    <source src="../Randomcams_Videos/FSK18/chp-fsk18-14.mp4" type="video/mp4">
+                                                    Your browser does not support the video tag.
+                                                </video>
+                                                <video class="video-clip" width="100%" preload="none" playsinline="" muted="">
+                                                    <source src="../Randomcams_Videos/FSK18/chp-fsk18-05.mp4" type="video/mp4">
+                                                    Your browser does not support the video tag.
+                                                </video>
+                                                <video class="video-clip" width="100%" preload="none" playsinline="" muted="">
+                                                    <source src="../Randomcams_Videos/FSK18/chp-fsk18-09.mp4" type="video/mp4">
+                                                    Your browser does not support the video tag.
+                                                </video>
+                                                <video class="video-clip" width="100%" preload="none" playsinline="" muted="">
+                                                    <source src="../Randomcams_Videos/FSK18/chp-fsk18-24.mp4" type="video/mp4">
+                                                    Your browser does not support the video tag.
+                                                </video>
+                                                <video class="video-clip" width="100%" preload="none" playsinline="" muted="">
+                                                    <source src="../Randomcams_Videos/FSK18/chp-fsk18-25.mp4" type="video/mp4">
+                                                    Your browser does not support the video tag.
+                                                </video>
+                                                <video class="video-clip" width="100%" preload="none" playsinline="" muted="">
+                                                    <source src="../Randomcams_Videos/FSK18/chp-fsk18-10.mp4" type="video/mp4">
+                                                    Your browser does not support the video tag.
+                                                </video>
+                                                <video class="video-clip" width="100%" preload="none" playsinline="" muted="">
+                                                    <source src="../Randomcams_Videos/FSK18/chp-fsk18-03.mp4" type="video/mp4">
+                                                    Your browser does not support the video tag.
+                                                </video>
+                                                <video class="video-clip" width="100%" preload="none" playsinline="" muted="">
+                                                    <source src="../Randomcams_Videos/FSK18/chp-fsk18-01.mp4" type="video/mp4">
+                                                    Your browser does not support the video tag.
+                                                </video>
+                                                <video class="video-clip" width="100%" preload="none" playsinline="" muted="">
+                                                    <source src="../Randomcams_Videos/FSK18/chp-fsk18-18.mp4" type="video/mp4">
+                                                    Your browser does not support the video tag.
+                                                </video>
+                                                <video class="video-clip" width="100%" preload="none" playsinline="" muted="">
+                                                    <source src="../Randomcams_Videos/FSK18/chp-fsk18-20.mp4" type="video/mp4">
+                                                    Your browser does not support the video tag.
+                                                </video>
+                                                <video class="video-clip" width="100%" preload="none" playsinline="" muted="">
+                                                    <source src="../Randomcams_Videos/FSK18/chp-fsk18-17.mp4" type="video/mp4">
+                                                    Your browser does not support the video tag.
+                                                </video>
+                                                <video class="video-clip" width="100%" preload="none" playsinline="" muted="">
+                                                    <source src="../Randomcams_Videos/FSK18/chp-fsk18-13.mp4" type="video/mp4">
+                                                    Your browser does not support the video tag.
+                                                </video>
+                                                <video class="video-clip" width="100%" preload="none" playsinline="" muted="">
+                                                    <source src="../Randomcams_Videos/FSK18/chp-fsk18-11.mp4" type="video/mp4">
+                                                    Your browser does not support the video tag.
+                                                </video>
+                                                <video class="video-clip" width="100%" preload="none" playsinline="" muted="">
+                                                    <source src="../Randomcams_Videos/FSK18/chp-fsk18-04.mp4" type="video/mp4">
+                                                    Your browser does not support the video tag.
+                                                </video>
+                                                <video class="video-clip" width="100%" preload="none" playsinline="" muted="">
+                                                    <source src="../Randomcams_Videos/FSK18/chp-fsk18-12.mp4" type="video/mp4">
+                                                    Your browser does not support the video tag.
+                                                </video>
+                                                <video class="video-clip" width="100%" preload="none" playsinline="" muted="">
+                                                    <source src="../Randomcams_Videos/FSK18/chp-fsk18-07.mp4" type="video/mp4">
+                                                    Your browser does not support the video tag.
+                                                </video>
+                                                <video class="video-clip" width="100%" preload="none" playsinline="" muted="">
+                                                    <source src="../Randomcams_Videos/FSK18/chp-fsk18-02.mp4" type="video/mp4">
+                                                    Your browser does not support the video tag.
+                                                </video>
+                                            </div>
+                                            <button class="next-video">Next woman</button>
+                                            <div class="loading-screen">
+                                                <div class="loading-icons">
+                                                    <img class="ld-bubble" src="../img/_patterns/chp_bubble.png" alt="info-instacams.com">
+                                                    <img class="ld-hourglass" src="../img/_patterns/chp_hourglass.png" alt="info-instacams.com">
+                                                </div>
+                                                <p>Connecting with another user</p>
+                                            </div>
+                                        </div>
+                                        <p class="headline-chat txt-chat-desktop">Jerk Off with Horny Strangers!</p>
+                                    </div>
+                                    <form id="regform" action="/user/register" method="POST" autocomplete="on" novalidate="">
+                                        <div class="form-inner">
+                                            <div class="step step-fields js-step" data-step="step1">
+                                                <div class="step-inner">
+                                                    <p class="headline-1">Tired of jerking off alone? Want to masturbate with someone via video?</p>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-blue js-next-step">YES YES YES!!!</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="step step-fields js-step step-hidden" data-step="step2">
+                                                <div class="step-inner">
+                                                    <p class="headline-1">Hundreds of women are online waiting to strip naked in one-on-one sessions.</p>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-blue js-next-step">Continue</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="step step-fields js-step step-hidden" data-step="step3">
+                                                <div class="step-inner">
+                                                    <p class="headline-1">Jerk your cock while she rubs her pussy. You might even cum at the same time!</p>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-blue js-next-step">Continue</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="step step-fields js-step step-hidden" data-step="step4">
+                                                <div class="step-inner">
+                                                    <p class="headline-1">It's interactive masturbation not cheating, so your wife or girlfriend won't mind.</p>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-blue js-next-step">Continue</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="step step-fields js-step step-hidden" data-step="step5">
+                                                <div class="step-inner">
+                                                    <p class="headline-1">Create your account now and you'll be jerking off with horny women in seconds!</p>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-blue js-next-step">Continue</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="step step-fields js-step step-ageGroup step-hidden" data-step="stepAge">
+                                                <div class="step-inner">
+                                                    <p class="headline-1">What age-group are you in?</p>
+                                                    <div class="form-group">
+                                                        <div class="form-group-inner custom-select">
+                                                            <select id="age" name="age" class="form-control">
+                                                                <option selected="" value="">Select</option>
+                                                                <option value="18-25">18 - 25</option>
+                                                                <option value="26-35">26 - 35</option>
+                                                                <option value="36-45">36 - 45</option>
+                                                                <option value="46-55">46 - 55</option>
+                                                                <option value="56-65">56 - 65</option>
+                                                                <option value="66+">66+</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn-next js-next-step" aria-label="true"></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="step step-fields js-step js-validate-step step-hidden" data-step="username">
+                                                <div class="step-inner">
+                                                    <p class="headline-1">Choose a Username</p>
+                                                    <div class="form-group">
+                                                        <div class="form-group-inner">
+                                                            <input type="text" id="username" name="username" class="form-control" value="" placeholder="Username" autocomplete="given-name" data-validator="notDigital|required|inputUserNameUTF|minLength|maxLength" data-inputusernameutf-message="Please enter a valid username. Avoid special characters in your name." data-notdigital-message="Please enter a valid username. Avoid special characters in your name." data-required-message="Please enter a valid username. Avoid special characters in your name." data-minlength-compare="3" data-minlength-message="Your username must be at least 3 characters long." data-maxlength-compare="30" data-maxlength-message="Your username can not be longer than 30 characters.">
+                                                        </div>
+                                                    </div>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-blue js-next-step">Continue</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="step step-fields js-step js-validate-step step-hidden" data-step="password">
+                                                <div class="step-inner">
+                                                    <p class="headline-1">Choose a Password</p>
+                                                    <div class="form-group">
+                                                        <div class="form-group-inner">
+                                                            <input type="password" id="password" name="password" class="form-control" value="" placeholder="Password" autocomplete="password" data-validator="required|minLength|maxLength|noSpaceChar" data-required-message="Your password is invalid." data-nospacechar-message="Your password is invalid." data-minlength-compare="6" data-minlength-message="Your password must be at least 6 characters long." data-maxlength-compare="100" data-maxlength-message="Your password can not be longer than 100 characters.">
+                                                        </div>
+                                                    </div>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-blue js-next-step">Continue</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="step step-fields js-step step-hidden" data-step="lastForm">
+                                                <div class="step-inner">
+                                                    <p class="headline-1">Enter your email address</p>
+                                                    <div class="form-group hidden">
+                                                        <div class="form-group-inner">
+                                                            <input type="text" id="gender" name="gender" class="form-control" value="MALE">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group hidden">
+                                                        <div class="form-group-inner">
+                                                            <input type="text" id="searchGender" name="searchGender" class="form-control" value="FEMALE">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="form-group-inner">
+                                                            <input type="email" id="email" name="email" class="form-control" value="" placeholder="Email address" autocomplete="email" data-validator="required|email|maxLength" data-required-message="Your Email address is invalid or not allowed." data-email-message="Your Email address is invalid or not allowed." data-maxlength-compare="150" data-maxlength-message="The Email cannot be longer than 150 characters." data-emailaddressnotvalid-message="The Email address is not allowed." data-emailexists-message="The Email address is already in use." data-emailblacklisted-message="Sorry, there was a technical error, please try again.">
+                                                        </div>
+                                                    </div>
+                                                    <div class="btn-group">
+                                                        <button type="submit" class="btn btn-blue" data-unknown-message="Sorry, there was a technical error, please try again." data-alreadyregisteredrecently-message="Sorry, there was a technical error, please try again." data-emailaddressnotvalid-message="The Email address is not allowed.">Continue</button>
+                                                    </div>
+                                                    <div class="legal-warning-text">
+                                                        <div class="legal-warning-text-inner">
+                                                            <p>By registering, I confirm that I have read and accepted the
+                                                                <a href="javascript:;" class="legal__agb">terms and conditions</a>
+                                                                and
+                                                                <a href="javascript:;" class="legal__privacy">privacy policy</a>.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <input type="hidden" value="https://live.info-instacams.com/landing/chp8119?subPublisher=banner%3Awww.pornhub.com&zone=banner%3Awww.pornhub.com&adformat=banner&auctionid=f27fad86abeb422eb56ce83149d2c2c4&uniqueid=9720aa6ae4ced187a827f1022fafc2c1&name=Trafficjunky_banner_300x250_alb-bih-bgr-cyp-cze-est-hrv-hun-kaz-ltu-lva-mda-mne-mkd-mlt-pol-rou-srb-svn-svk_desktop_randomcams_en&width=300&height=250&newservice=true&cmsid=landing--gml8103--landing--chp8119&tpcampid=26a666f0-4779-49fe-b7f6-63e7da2ac1bf&imp_tagid=30781&ba=a25dc392-67cd-4cd5-bb55-1a30e153743f&uid=IVG-9bbec1b31bdba09b15f7ec8e62d2b8b1&campaign_lp=1%3Alanding--gml8103--landing--chp8119&product=instacams&zz=true&nextPage=%2Flanding%2Fchp8119&hit_id=108df4e4-730b-432c-a97c-b72b47ef3c04&tp_redirect_id=108df4e4-730b-432c-a97c-b72b47ef3c04&tag=108df4e4-730b-432c-a97c-b72b47ef3c04&clickId=108df4e4-730b-432c-a97c-b72b47ef3c04" name="fullUrl" id="_fullUrl">
+                                    </form>
+                                    <div class="trustcontainer1">
+                                        <ul class="trustcontainer1-content slider">
+                                            <li class="trustcontainer1-item slide active">
+                                                <div class="trustcontainer1-item__image">
+                                                    <img src="../b0e4f7ed-d52e-4df2-85ee-b3d10cc0e98e.svg" alt="trust">
+                                                    <p class="trustcontainer1-item__text">100% Satisfaction Guaranteed</p>
+                                                </div>
+                                            </li>
+                                            <li class="trustcontainer1-item slide">
+                                                <div class="trustcontainer1-item__image">
+                                                    <img src="../22263416-4fb3-402c-926b-2577b32791b6.svg" alt="trust">
+                                                    <p class="trustcontainer1-item__text">Certified Privacy Guaranteed</p>
+                                                </div>
+                                            </li>
+                                            <li class="trustcontainer1-item slide">
+                                                <div class="trustcontainer1-item__image">
+                                                    <img src="../fc861c04-49b1-448a-8d3f-67a005b8b110.svg" alt="trust">
+                                                    <p class="trustcontainer1-item__text">100% Secure Online Platform</p>
+                                                </div>
+                                            </li>
+                                            <li class="trustcontainer1-item slide activeleft">
+                                                <div class="trustcontainer1-item__image">
+                                                    <img src="../d9a3049e-81f1-4297-b9fe-6b5e7dc3d2b2.svg" alt="trust">
+                                                    <p class="trustcontainer1-item__text">Top Video Chat Platform 2023</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <button class="prev prefix-prev"></button>
+                                        <button class="next prefix-next"></button>
+                                    </div>
+                                    <div class="progress-bar-wrapper">
+                                        <ul class="progress-bar js-progress-bar">
+                                            <li class="active visited"></li>
+                                            <li class=""></li>
+                                            <li class=""></li>
+                                            <li class=""></li>
+                                            <li class=""></li>
+                                            <li class=""></li>
+                                            <li class=""></li>
+                                            <li class=""></li>
+                                            <li class=""></li>
+                                        </ul>
+                                    </div>
+                                    <div class="display-mobile">
+                                        <div class="badgescontainer">
+                                            <ul class="badgescontainer-content">
+                                                <li class="badgescontainer-item">
+                                                    <div class="badgescontainer-item__image">
+                                                        <img src="../928e1976-80de-4281-92a4-5452cf4e245d.svg" alt="badge">
+                                                    </div>
+                                                    <div class="badgescontainer-item__title">
+                                                        <p class="txt-badge">Instantly connect with strangers via HD video-chat, and if you don't like your partner, just click Next!</p>
+                                                    </div>
+                                                </li>
+                                                <li class="badgescontainer-item">
+                                                    <div class="badgescontainer-item__image">
+                                                        <img src="../95d090eb-c27c-4e35-ae89-b9de4e60ca91.svg" alt="badge">
+                                                    </div>
+                                                    <div class="badgescontainer-item__title">
+                                                        <p class="txt-badge">If you're looking for a quick fling, we make it safe and easy to hook up online with someone from the opposite sex using your webcam.</p>
+                                                    </div>
+                                                </li>
+                                                <li class="badgescontainer-item">
+                                                    <div class="badgescontainer-item__image">
+                                                        <img src="../2e7f8790-3f2c-4eb6-a661-c6ac08b205cf.svg" alt="badge">
+                                                    </div>
+                                                    <div class="badgescontainer-item__title">
+                                                        <p class="txt-badge">Our real-time translation removes language barriers and makes meeting new people from anywhere in the world easier than ever before.</p>
+                                                    </div>
+                                                </li>
+                                                <li class="badgescontainer-item">
+                                                    <div class="badgescontainer-item__image">
+                                                        <img src="../f8b040d8-4837-42a5-a596-5b2b23542662.svg" alt="badge">
+                                                    </div>
+                                                    <div class="badgescontainer-item__title">
+                                                        <p class="txt-badge">Your security is our priority! Connect with confidence and chat freely with strangers worldwide in a safe and private environment.</p>
+                                                    </div>
+                                                </li>
                                             </ul>
+                                        </div>
+                                        <div class="content-mobile">
+                                            <div class="footer container">
+                                                <div class="legal__container">
+                                                    <div class="legal__agb url_imprint" data-uid="legal__agb--{{ txt_legal_agb }}">Terms of Use</div>
+                                                    <div class="legal__imprint" data-uid="legal__imprint--{{ txt_legal_imprint }}">Imprint</div>
+                                                    <div class="legal__privacy" data-uid="legal__privacy--{{ txt_legal_privacy }}">Privacy Policy</div>
+                                                </div>
+                                                <div class="disclaimer">The owners and operators of this Website are not the primary producer (as that term is defined in 18 USC section 2257) of any of the visual content contained in the Website. The original records required pursuant to 18 U.S.C. section 2257 and 28 C.F.R. 75 for materials contained in the website are kept by the appropriate Custodian of Records as follows: xsmobile SP Z.O.O., Ul.- Naramowicka, nr 217B, 61-611 Poznan, Poland</div>
+                                                <div class="copyright">Copyright © 2025</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="popup">
+                        <div class="support-popup">
+                            <i class="close-popup icon-close"></i>
+                            <span>Support</span>
+                            <p>You have questions or need help? Contact us at any time at <a href="/cdn-cgi/l/email-protection#13b363f3f3c131a3d353c7e3a3d20273230323e207d303c3e"><span class="__cf_email__" data-cfemail="a28a878e8e8da2ab8c848dcf8b8c91968381838f91cc818d8f">[email&#160;protected]</span></a>.</p>
+                        </div>
+                        <div class="settings-popup">
+                            <i class="close-popup icon-close"></i>
+                            <hr>
+                            <span>Visitor settings</span>
+                            <p>On Info-instacams men are connected with random women, and women with random men. This visitor account is a <b class="st-gender"></b> visitor account. Was it a mistake? <a class="logout" href="/">Click here</a>, to log out and reset your gender settings.</p>
+                            <button class="close-popup btn-blue">Close</button>
+                        </div>
+                        <div class="form-popup">
+                            <i class="close-popup icon-close"></i>
+                            <ul class="form-tabs">
+                                <li class="tab-login active">
+                                    <div class="login-form">
+                                        <a href="/" class="btn btn-login js-btn-open-login">Login</a>
+                                        <div class="btn-nav">
+                                            <input type="checkbox">
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                            <p><a href="/" class="btn btn-login js-btn-open-login">Login</a></p>
+                                        </div>
+                                        <div class="login-form-holder js-login-form-holder hidden">
+                                            <div class="login-form-holder-inner">
+                                                <form id="login-form" action="/user/login" method="post" data-submit-type="ajax">
+                                                    <a href="/" class="btn-close js-btn-close-login">×</a>
+                                                    <p class="headline-member">Already a member?</p>
+                                                    <div class="form-group login-username">
+                                                        <input type="text" class="form-control" id="login_username" name="login_username" data-username-required-message="Your email address is invalid or not allowed." data-email-invalid-message="Your email address is invalid or not allowed." placeholder="Email address">
+                                                    </div>
+                                                    <div class="form-group login-password">
+                                                        <input type="password" class="form-control" id="login_password" name="login_password" data-password-required-message="Your password is invalid." placeholder="Password">
+                                                    </div>
+                                                    <div class="js-errors"></div>
+                                                    <div class="btn-group">
+                                                        <button id="login_submit" class="btn-submit" data-login-fail-message="Email address or password is not recognised." data-username-fail-message="Email address or password is not recognised." data-password-fail-message="Email address or password is not recognised." type="submit">Login</button>
+                                                    </div>
+                                                    <input type="hidden" name="trk" value="info-instacams.com">
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="bn-body">
-                                    <div class="modal-box">
-                        
-        
-                                                                                                                                                                                                                                    
-    
-<div class="registration-form-builder ">
-    <div class="registration-form-builder-inner">
-                            <div class="form-header">
-            <div class='video-frame '>
-            <span class="live-video">LIVE</span>
-            <div class="video-wrapper">
-                                    <video class="video-clip" width="100%" preload="none" playsinline="" muted="">
-                        <source src="../Randomcams_Videos/FSK18/chp-fsk18-19.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                                    <video class="video-clip" width="100%" preload="none" playsinline="" muted="">
-                        <source src="../Randomcams_Videos/FSK18/chp-fsk18-08.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                                    <video class="video-clip" width="100%" preload="none" playsinline="" muted="">
-                        <source src="../Randomcams_Videos/FSK18/chp-fsk18-15.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                                    <video class="video-clip" width="100%" preload="none" playsinline="" muted="">
-                        <source src="../Randomcams_Videos/FSK18/chp-fsk18-23.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                                    <video class="video-clip" width="100%" preload="none" playsinline="" muted="">
-                        <source src="../Randomcams_Videos/FSK18/chp-fsk18-22.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                                    <video class="video-clip" width="100%" preload="none" playsinline="" muted="">
-                        <source src="../Randomcams_Videos/FSK18/chp-fsk18-16.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                                    <video class="video-clip" width="100%" preload="none" playsinline="" muted="">
-                        <source src="../Randomcams_Videos/FSK18/chp-fsk18-21.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                                    <video class="video-clip" width="100%" preload="none" playsinline="" muted="">
-                        <source src="../Randomcams_Videos/FSK18/chp-fsk18-06.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                                    <video class="video-clip" width="100%" preload="none" playsinline="" muted="">
-                        <source src="../Randomcams_Videos/FSK18/chp-fsk18-14.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                                    <video class="video-clip" width="100%" preload="none" playsinline="" muted="">
-                        <source src="../Randomcams_Videos/FSK18/chp-fsk18-05.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                                    <video class="video-clip" width="100%" preload="none" playsinline="" muted="">
-                        <source src="../Randomcams_Videos/FSK18/chp-fsk18-09.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                                    <video class="video-clip" width="100%" preload="none" playsinline="" muted="">
-                        <source src="../Randomcams_Videos/FSK18/chp-fsk18-24.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                                    <video class="video-clip" width="100%" preload="none" playsinline="" muted="">
-                        <source src="../Randomcams_Videos/FSK18/chp-fsk18-25.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                                    <video class="video-clip" width="100%" preload="none" playsinline="" muted="">
-                        <source src="../Randomcams_Videos/FSK18/chp-fsk18-10.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                                    <video class="video-clip" width="100%" preload="none" playsinline="" muted="">
-                        <source src="../Randomcams_Videos/FSK18/chp-fsk18-03.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                                    <video class="video-clip" width="100%" preload="none" playsinline="" muted="">
-                        <source src="../Randomcams_Videos/FSK18/chp-fsk18-01.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                                    <video class="video-clip" width="100%" preload="none" playsinline="" muted="">
-                        <source src="../Randomcams_Videos/FSK18/chp-fsk18-18.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                                    <video class="video-clip" width="100%" preload="none" playsinline="" muted="">
-                        <source src="../Randomcams_Videos/FSK18/chp-fsk18-20.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                                    <video class="video-clip" width="100%" preload="none" playsinline="" muted="">
-                        <source src="../Randomcams_Videos/FSK18/chp-fsk18-17.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                                    <video class="video-clip" width="100%" preload="none" playsinline="" muted="">
-                        <source src="../Randomcams_Videos/FSK18/chp-fsk18-13.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                                    <video class="video-clip" width="100%" preload="none" playsinline="" muted="">
-                        <source src="../Randomcams_Videos/FSK18/chp-fsk18-11.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                                    <video class="video-clip" width="100%" preload="none" playsinline="" muted="">
-                        <source src="../Randomcams_Videos/FSK18/chp-fsk18-04.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                                    <video class="video-clip" width="100%" preload="none" playsinline="" muted="">
-                        <source src="../Randomcams_Videos/FSK18/chp-fsk18-12.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                                    <video class="video-clip" width="100%" preload="none" playsinline="" muted="">
-                        <source src="../Randomcams_Videos/FSK18/chp-fsk18-07.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                                    <video class="video-clip" width="100%" preload="none" playsinline="" muted="">
-                        <source src="../Randomcams_Videos/FSK18/chp-fsk18-02.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
+        </div>
+        <div class="content">
+            <div class="container">
+                <h2 class="ct-title">One-to-one live random video chat</h2>
+                <span class="ct-subtitle">On Info-instacams males are connected to random females and females are connected to random males!</span>
+                <ul class="ct-paragraphs">
+                    <li>
+                        <img src="../400c7587-8019-4ed2-9860-8787a9eec5e1.png" alt="Random Video Chat Matches">
+                        <div class="pr-text">
+                            <h3>Random Video Chat Matches</h3>
+                            <p>Start a private video chat with any person in just 10 seconds. Info-instacams randomly connects males with females and females with males. If you don't like your partner, just click "Next" to be connected with a new stranger in a second. To meet new friends from all over the world has never been easier.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="../404b5361-40ef-4524-9b74-df281d804049.png" alt="Men are matched only with females">
+                        <div class="pr-text">
+                            <h3>Men are matched only with females</h3>
+                            <p>As a man, you've probably already tried random chat sites where 90% of your matches are men. On InstaCams, males only connect with females, and females only connect with males.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="../a9c22020-415b-48dc-a9e8-d85ca0a578d3.png" alt="Real Time Translations">
+                        <div class="pr-text">
+                            <h3>Real Time Translations</h3>
+                            <p>When you interact with people from all over the world, you may not speak the same language as your partner. No problem. Our real-time translation system automatically translates incoming messages into your language and outgoing messages into your partner's. You won't even notice that your partner is on the other side of the world.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="lower-banner" style="background-image: url(../f30a529b-4710-4c1f-b126-5e7bcfbe0cc3.png)">
+                <p><b>1 million </b> members from <b>100+</b> countries</p>
+            </div>
+            <div class="lower-content">
+                <h2>Want to give it a try?</h2>
+                <p>Select your gender, click "start searching"... That's it! You're in a private live video chat with a random person. <b>No signup needed.</b></p>
+                <button class="scroll-top btn-blue">Try now</button>
+            </div>
+            <div class="display-desktop">
+                <div class="badgescontainer">
+                    <ul class="badgescontainer-content">
+                        <li class="badgescontainer-item">
+                            <div class="badgescontainer-item__image">
+                                <img src="../928e1976-80de-4281-92a4-5452cf4e245d.svg" alt="badge">
                             </div>
-            <button class="next-video">Next woman</button>
-            <div class="loading-screen">
-                <div class="loading-icons">
-                    <img class="ld-bubble" src="../img/_patterns/chp_bubble.png" alt="info-instacams.com">
-                    <img class="ld-hourglass" src="../img/_patterns/chp_hourglass.png" alt="info-instacams.com">
+                            <div class="badgescontainer-item__title">
+                                <p class="txt-badge">Instantly connect with strangers via HD video-chat, and if you don't like your partner, just click Next!</p>
+                            </div>
+                        </li>
+                        <li class="badgescontainer-item">
+                            <div class="badgescontainer-item__image">
+                                <img src="../95d090eb-c27c-4e35-ae89-b9de4e60ca91.svg" alt="badge">
+                            </div>
+                            <div class="badgescontainer-item__title">
+                                <p class="txt-badge">If you're looking for a quick fling, we make it safe and easy to hook up online with someone from the opposite sex using your webcam.</p>
+                            </div>
+                        </li>
+                        <li class="badgescontainer-item">
+                            <div class="badgescontainer-item__image">
+                                <img src="../2e7f8790-3f2c-4eb6-a661-c6ac08b205cf.svg" alt="badge">
+                            </div>
+                            <div class="badgescontainer-item__title">
+                                <p class="txt-badge">Our real-time translation removes language barriers and makes meeting new people from anywhere in the world easier than ever before.</p>
+                            </div>
+                        </li>
+                        <li class="badgescontainer-item">
+                            <div class="badgescontainer-item__image">
+                                <img src="../f8b040d8-4837-42a5-a596-5b2b23542662.svg" alt="badge">
+                            </div>
+                            <div class="badgescontainer-item__title">
+                                <p class="txt-badge">Your security is our priority! Connect with confidence and chat freely with strangers worldwide in a safe and private environment.</p>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
-                <p>Connecting with another user</p>
-            </div>
-        </div>
-                <p class="headline-chat txt-chat-desktop">Jerk Off with Horny Strangers!</p>
-</div>
-                <form id="regform" action="/user/register" method="POST" autocomplete="on" novalidate="">
-                                    <div class="form-inner ">
-                                    <div class="step step-fields js-step" data-step="step1">
-    <div class="step-inner">
-            <p class="headline-1">Tired of jerking off alone? Want to masturbate with someone via video?</p>
-
-                            <div class="btn-group">
-            <button type="button" class="btn btn-blue js-next-step">YES YES YES!!!</button>
-    </div>
-            </div>
-</div>
-                                    <div class="step step-fields js-step step-hidden" data-step="step2">
-    <div class="step-inner">
-            <p class="headline-1">Hundreds of women are online waiting to strip naked in one-on-one sessions.</p>
-
-                            <div class="btn-group">
-            <button type="button" class="btn btn-blue js-next-step">Continue</button>
-    </div>
-            </div>
-</div>
-                                    <div class="step step-fields js-step step-hidden" data-step="step3">
-    <div class="step-inner">
-            <p class="headline-1">Jerk your cock while she rubs her pussy. You might even cum at the same time!</p>
-
-                            <div class="btn-group">
-            <button type="button" class="btn btn-blue js-next-step">Continue</button>
-    </div>
-            </div>
-</div>
-                                    <div class="step step-fields js-step step-hidden" data-step="step4">
-    <div class="step-inner">
-            <p class="headline-1">It's interactive masturbation not cheating, so your wife or girlfriend won't mind.</p>
-
-                            <div class="btn-group">
-            <button type="button" class="btn btn-blue js-next-step">Continue</button>
-    </div>
-            </div>
-</div>
-                                    <div class="step step-fields js-step step-hidden" data-step="step5">
-    <div class="step-inner">
-            <p class="headline-1">Create your account now and you'll be jerking off with horny women in seconds!</p>
-
-                            <div class="btn-group">
-            <button type="button" class="btn btn-blue js-next-step">Continue</button>
-    </div>
-            </div>
-</div>
-                                    <div class="step step-fields js-step step-ageGroup step-hidden" data-step="stepAge">
-    <div class="step-inner">
-            <p class="headline-1">What age-group are you in?</p>
-
-                        <div class="form-group ">
-    
-    <div class="form-group-inner custom-select">
-        <select id="age" name="age" class="form-control ">
-                            <option selected="" value="">Select</option>
-                            <option value="18-25">18 - 25</option>
-                            <option value="26-35">26 - 35</option>
-                            <option value="36-45">36 - 45</option>
-                            <option value="46-55">46 - 55</option>
-                            <option value="56-65">56 - 65</option>
-                            <option value="66+">66+</option>
-                    </select>
-    </div>
-</div>
-                            <div class="btn-group">
-            <button type="button" class="btn-next js-next-step" aria-label="true"></button>
-    </div>
-            </div>
-</div>
-                                    <div class="step step-fields js-step js-validate-step step-hidden" data-step="username">
-    <div class="step-inner">
-            <p class="headline-1">Choose a Username</p>
-
-                        <div class="form-group ">
-    
-    <div class="form-group-inner">
-        <input type="text" id="username" name="username" class="form-control " value="" placeholder="Username" autocomplete="given-name" data-validator="notDigital|required|inputUserNameUTF|minLength|maxLength" data-inputusernameutf-message="Please enter a valid username. Avoid special characters in your name." data-notdigital-message="Please enter a valid username. Avoid special characters in your name." data-required-message="Please enter a valid username. Avoid special characters in your name." data-minlength-compare="3" data-minlength-message="Your username must be at least 3 characters long." data-maxlength-compare="30" data-maxlength-message="Your username can not be longer than 30 characters.">
-    </div>
-</div>
-                            <div class="btn-group">
-            <button type="button" class="btn btn-blue js-next-step">Continue</button>
-    </div>
-            </div>
-</div>
-                                    <div class="step step-fields js-step js-validate-step step-hidden" data-step="password">
-    <div class="step-inner">
-            <p class="headline-1">Choose a Password</p>
-
-                    
-    <div class="form-group ">
-    
-    <div class="form-group-inner">
-        <input type="password" id="password" name="password" class="form-control " value="" placeholder="Password" autocomplete="password" data-validator="required|minLength|maxLength|noSpaceChar" data-required-message="Your password is invalid." data-nospacechar-message="Your password is invalid." data-minlength-compare="6" data-minlength-message="Your password must be at least 6 characters long." data-maxlength-compare="100" data-maxlength-message="Your password can not be longer than 100 characters.">
-    </div>
-</div>
-                            <div class="btn-group">
-            <button type="button" class="btn btn-blue js-next-step">Continue</button>
-    </div>
-            </div>
-</div>
-                                    <div class="step step-fields js-step step-hidden" data-step="lastForm">
-    <div class="step-inner">
-            <p class="headline-1">Enter your email address</p>
-
-                    
-<div class="form-group hidden">
-    
-    <div class="form-group-inner">
-        <input type="text" id="gender" name="gender" class="form-control " value="MALE">
-    </div>
-</div>
-                    
-<div class="form-group hidden">
-    
-    <div class="form-group-inner">
-        <input type="text" id="searchGender" name="searchGender" class="form-control " value="FEMALE">
-    </div>
-</div>
-                        <div class="form-group ">
-    
-    <div class="form-group-inner">
-        <input type="email" id="email" name="email" class="form-control " value="" placeholder="Email address" autocomplete="email" data-validator="required|email|maxLength" data-required-message="Your Email address is invalid or not allowed." data-email-message="Your Email address is invalid or not allowed." data-maxlength-compare="150" data-maxlength-message="The Email cannot be longer than 150 characters." data-emailaddressnotvalid-message="The Email address is not allowed." data-emailexists-message="The Email address is already in use." data-emailblacklisted-message="Sorry, there was a technical error, please try again.">
-    </div>
-</div>
-                    <div class="btn-group ">
-            <button type="submit" class="btn btn-blue" data-unknown-message="Sorry, there was a technical error, please try again." data-alreadyregisteredrecently-message="Sorry, there was a technical error, please try again." data-emailaddressnotvalid-message="The Email address is not allowed.">Continue</button>
-    </div>
-                    
-    
-                                                                                                                                                                                                                                                                    
-
-
-<div class="legal-warning-text ">
-    <div class="legal-warning-text-inner">
-                    <p>By registering, I confirm that I have read and accepted the
-            <a href="javascript:;" class="legal__agb">terms and conditions</a>
-            and
-             
-            <a href="javascript:;" class="legal__privacy">privacy policy</a>.</p>
-            </div>
-</div>
+                <div class="content-mobile">
+                    <div class="footer container">
+                        <div class="legal__container">
+                            <div class="legal__agb url_imprint" data-uid="legal__agb--{{ txt_legal_agb }}">Terms of Use</div>
+                            <div class="legal__imprint" data-uid="legal__imprint--{{ txt_legal_imprint }}">Imprint</div>
+                            <div class="legal__privacy" data-uid="legal__privacy--{{ txt_legal_privacy }}">Privacy Policy</div>
+                        </div>
+                        <div class="disclaimer">The owners and operators of this Website are not the primary producer (as that term is defined in 18 USC section 2257) of any of the visual content contained in the Website. The original records required pursuant to 18 U.S.C. section 2257 and 28 C.F.R. 75 for materials contained in the website are kept by the appropriate Custodian of Records as follows: xsmobile SP Z.O.O., Ul.- Naramowicka, nr 217B, 61-611 Poznan, Poland</div>
+                        <div class="copyright">Copyright ©Info-instacams 2025</div>
                     </div>
-</div>
-                            </div>
-                                                            <input type="hidden" value="https://live.info-instacams.com/landing/chp8119?subPublisher=banner%3Awww.pornhub.com&zone=banner%3Awww.pornhub.com&adformat=banner&auctionid=f27fad86abeb422eb56ce83149d2c2c4&uniqueid=9720aa6ae4ced187a827f1022fafc2c1&name=Trafficjunky_banner_300x250_alb-bih-bgr-cyp-cze-est-hrv-hun-kaz-ltu-lva-mda-mne-mkd-mlt-pol-rou-srb-svn-svk_desktop_randomcams_en&width=300&height=250&newservice=true&cmsid=landing--gml8103--landing--chp8119&tpcampid=26a666f0-4779-49fe-b7f6-63e7da2ac1bf&imp_tagid=30781&ba=a25dc392-67cd-4cd5-bb55-1a30e153743f&uid=IVG-9bbec1b31bdba09b15f7ec8e62d2b8b1&campaign_lp=1%3Alanding--gml8103--landing--chp8119&product=instacams&zz=true&nextPage=%2Flanding%2Fchp8119&hit_id=108df4e4-730b-432c-a97c-b72b47ef3c04&tp_redirect_id=108df4e4-730b-432c-a97c-b72b47ef3c04&tag=108df4e4-730b-432c-a97c-b72b47ef3c04&clickId=108df4e4-730b-432c-a97c-b72b47ef3c04" name="fullUrl" id="_fullUrl">
-        </form>
-                            
-  <div class="trustcontainer1"> 
-    <ul class="trustcontainer1-content slider">
-                <li class="trustcontainer1-item slide active">
-        <div class="trustcontainer1-item__image"> 
-         <img src="../b0e4f7ed-d52e-4df2-85ee-b3d10cc0e98e.svg" alt="trust" alt="trust"> 
-         <p class="trustcontainer1-item__text">100% Satisfaction Guaranteed</p>
-         </div>
-        </li>
-                <li class="trustcontainer1-item slide ">
-        <div class="trustcontainer1-item__image"> 
-         <img src="../22263416-4fb3-402c-926b-2577b32791b6.svg" alt="trust" alt="trust"> 
-         <p class="trustcontainer1-item__text">Certified Privacy Guaranteed</p>
-         </div>
-        </li>
-                <li class="trustcontainer1-item slide ">
-        <div class="trustcontainer1-item__image"> 
-         <img src="../fc861c04-49b1-448a-8d3f-67a005b8b110.svg" alt="trust" alt="trust"> 
-         <p class="trustcontainer1-item__text">100% Secure Online Platform</p>
-         </div>
-        </li>
-                <li class="trustcontainer1-item slide activeleft">
-        <div class="trustcontainer1-item__image"> 
-         <img src="../d9a3049e-81f1-4297-b9fe-6b5e7dc3d2b2.svg" alt="trust" alt="trust"> 
-         <p class="trustcontainer1-item__text">Top Video Chat Platform 2023</p>
-         </div>
-        </li>
-         
-    </ul>
-<button class="prev prefix-prev"></button>
-<button class="next prefix-next"></button>
-</div>
-
-
-	<div class="progress-bar-wrapper">
-	<ul class="progress-bar js-progress-bar">
-					<li class="active visited"></li>
-					<li class=""></li>
-					<li class=""></li>
-					<li class=""></li>
-					<li class=""></li>
-					<li class=""></li>
-					<li class=""></li>
-					<li class=""></li>
-					<li class=""></li>
-			</ul>
-</div>
-<div class="display-mobile">
-    <div class="badgescontainer"> 
-    <ul class="badgescontainer-content">
-                <li class="badgescontainer-item">
-        <div class="badgescontainer-item__image">  <img src="../928e1976-80de-4281-92a4-5452cf4e245d.svg" alt="badge" alt="badge"> </div>
-        
-        <div class="badgescontainer-item__title"> 
-         <p class="txt-badge">Instantly connect with strangers via HD video-chat, and if you don't like your partner, just click Next!</p>
-        </div>
-       
-        </li>
-                <li class="badgescontainer-item">
-        <div class="badgescontainer-item__image">  <img src="../95d090eb-c27c-4e35-ae89-b9de4e60ca91.svg" alt="badge" alt="badge"> </div>
-        
-        <div class="badgescontainer-item__title"> 
-         <p class="txt-badge">If you're looking for a quick fling, we make it safe and easy to hook up online with someone from the opposite sex using your webcam .</p>
-        </div>
-       
-        </li>
-                <li class="badgescontainer-item">
-        <div class="badgescontainer-item__image">  <img src="../2e7f8790-3f2c-4eb6-a661-c6ac08b205cf.svg" alt="badge" alt="badge"> </div>
-        
-        <div class="badgescontainer-item__title"> 
-         <p class="txt-badge">Our real-time translation removes language barriers and makes meeting new people from anywhere in the world easier than ever before.</p>
-        </div>
-       
-        </li>
-                <li class="badgescontainer-item">
-        <div class="badgescontainer-item__image">  <img src="../f8b040d8-4837-42a5-a596-5b2b23542662.svg" alt="badge" alt="badge"> </div>
-        
-        <div class="badgescontainer-item__title"> 
-         <p class="txt-badge">Your security is our priority! Connect with confidence and chat freely with strangers worldwide in a safe and private environment.</p>
-        </div>
-       
-        </li>
-         
-    </ul>
-   
-</div>
-<div class="content-mobile"> 
- <div class="footer container">
-		    <div class="legal__container">
-                                                <div class="legal__agb url_imprint" data-uid="legal__agb--{{ txt_legal_agb }}">Terms of Use</div>
-                                                            <div class="legal__imprint" data-uid="legal__imprint--{{ txt_legal_imprint }}">Imprint</div>
-                                                                                                <div class="legal__privacy" data-uid="legal__privacy--{{ txt_legal_privacy }}">Privacy Policy</div>
-                                </div>
-
-		<div class="disclaimer">The owners and operators of this Website are not the primary producer (as that term is defined in 18 USC section 2257) of any of the visual content contained in the Website. The original records required pursuant to 18 U.S.C. section 2257 and 28 C.F.R. 75 for materials contained in the website are kept by the appropriate Custodian of Records as follows:
-xsmobile SP Z.O.O., Ul.- Naramowicka, nr 217B, 61-611 Poznan, Poland
-</div>
-		<div class="copyright">Copyright © 2025</div>
-</div>
-</div>
-</div>
-    
-
-
+                </div>
             </div>
-</div>
-
-                        
-                    </div>
-                            </div>
-            <div class="popup">
-    <div class="support-popup">
-        <i class="close-popup icon-close"></i>
-        <span>Support</span>
-        <p>You have questions or need help? Contact us at any time at <a href="/cdn-cgi/l/email-protection#533b363f3f3c131a3d353c7e3a3d20273230323e207d303c3e"><span class="__cf_email__" data-cfemail="e28a878e8e8da2ab8c848dcf8b8c91968381838f91cc818d8f">[email&#160;protected]</span></a>.</p>
-    </div>
-    <div class="settings-popup">
-        <i class="close-popup icon-close"></i>
-        <hr>
-        <span>Visitor settings</span>
-        <p>On Info-instacams men are connected with random women, and women with random men. This visitor account is a <b class="st-gender"></b> visitor account. Was it a mistake? <a class="logout" href="/">Click here</a>, to log out and reset your gender settings.</p>
-        <button class="close-popup btn-blue">Close</button>
-    </div>
-    <div class="form-popup">
-        <i class="close-popup icon-close"></i>
-        <ul class="form-tabs">
-            <li class="tab-login active">
-                         
-                    
-    <div class="login-form">
-        <a href="/" class="btn btn-login js-btn-open-login">Login</a>
-<div class="btn-nav">
-    <input type="checkbox">
-    <span></span>
-    <span></span>
-    <span></span>
-    <p>
-        <a href="/" class="btn btn-login js-btn-open-login">Login</a>
-    </p>
-</div>
-        <div class="login-form-holder js-login-form-holder hidden">
-            <div class="login-form-holder-inner">
-                <form id="login-form" action="/user/login" method="post" data-submit-type="ajax">
-                    <a href="/" class="btn-close js-btn-close-login">&times;</a>
-                    <p class="headline-member">Already a member?</p>
-                    <div class="form-group login-username">
-                        <input type="text" class="form-control" id="login_username" name="login_username" data-username-required-message="Your email address is invalid or not allowed." data-email-invalid-message="Your email address is invalid or not allowed." placeholder="Email address">
-                    </div>
-                    <div class="form-group login-password">
-                        <input type="password" class="form-control" id="login_password" name="login_password" data-password-required-message="Your password is invalid." placeholder="Password">
-                    </div>
-                    <div class="js-errors"></div>
-                    <div class="btn-group">
-    <button id="login_submit" class="btn-submit" data-login-fail-message="Email address or password is not recognised." data-username-fail-message="Email address or password is not recognised." data-password-fail-message="Email address or password is not recognised." type="submit">Login</button>
-</div>
-                    
-                    <input type="hidden" name="trk" value="info-instacams.com">
-                </form>
+            <div class="footer container">
+                <div class="legal__container">
+                    <div class="legal__agb url_imprint" data-uid="legal__agb--{{ txt_legal_agb }}">Terms of Use</div>
+                    <div class="legal__imprint" data-uid="legal__imprint--{{ txt_legal_imprint }}">Imprint</div>
+                    <div class="legal__privacy" data-uid="legal__privacy--{{ txt_legal_privacy }}">Privacy Policy</div>
+                </div>
+                <div class="disclaimer">The owners and operators of this Website are not the primary producer (as that term is defined in 18 USC section 2257) of any of the visual content contained in the Website. The original records required pursuant to 18 U.S.C. section 2257 and 28 C.F.R. 75 for materials contained in the website are kept by the appropriate Custodian of Records as follows: xsmobile SP Z.O.O., Ul.- Naramowicka, nr 217B, 61-611 Poznan, Poland</div>
+                <div class="copyright">Copyright ©Info-instacams 2025</div>
             </div>
         </div>
     </div>
-
-                           
-            </li>
-        </ul>
-    </div>
-    </div>
-        </div>
-    </div>
-     </div>
-                                    		                                                                                                          	
-<div class="content">
- 	<div class="container">
-		<h2 class="ct-title">One-to-one live random video chat</h2>
-		<span class="ct-subtitle">On Info-instacams males are connected to random females and females are connected to random males!</span>
-		<ul class="ct-paragraphs">
-							<li>
-					<img src="../400c7587-8019-4ed2-9860-8787a9eec5e1.png" alt="Random Video Chat Matches" alt="Random Video Chat Matches">
-					<div class="pr-text">
-						<h3>Random Video Chat Matches</h3>
-						<p>Start a private video chat with any person in just 10 seconds. Info-instacams vrandomly connects males with females and females with males. If you don't like your partner, just click "Next" to be connected with a new stranger in a second. To meet new friends from all over the world has never been easier.</p>
-					</div>
-				</li>
-							<li>
-					<img src="../404b5361-40ef-4524-9b74-df281d804049.png" alt="Men are matched only with females" alt="Men are matched only with females">
-					<div class="pr-text">
-						<h3>Men are matched only with females</h3>
-						<p>As a man, you've probably already tried random chat sites where 90% of your matches are men. On InstaCams, males only connect with females, and females only connect with males.</p>
-					</div>
-				</li>
-							<li>
-					<img src="../a9c22020-415b-48dc-a9e8-d85ca0a578d3.png" alt="Real Time Translations" alt="Real Time Translations">
-					<div class="pr-text">
-						<h3>Real Time Translations</h3>
-						<p>When you interact with people from all over the world, you may not speak the same language as your partner. No problem. Our real-time translation system automatically translates incoming messages into your language and outgoing messages into your partner's. You won't even notice that your partner is on the other side of the world. You won't even realize that your partner is on the other side of the world.</p>
-					</div>
-				</li>
-					</ul>
-	</div>
-	<div class="lower-banner" style="background-image: url(../f30a529b-4710-4c1f-b126-5e7bcfbe0cc3.png)">
-		<p><b>1 million </b> members from <b>100+</b> countries</p>
-	</div>
-	<div class="lower-content">
-		<h2>Want to give it a try?</h2>
-		<p>Select your gender, click "start searching"... That's it! You're in a private live video chat with a random person. <b>No signup needed.</b>.</p>
-		<button class="scroll-top btn-blue">Try now</button>
-	</div>
-			<div class="display-desktop ">
-			<div class="badgescontainer"> 
-    <ul class="badgescontainer-content">
-                <li class="badgescontainer-item">
-        <div class="badgescontainer-item__image">  <img src="../928e1976-80de-4281-92a4-5452cf4e245d.svg" alt="badge" alt="badge"> </div>
-        
-        <div class="badgescontainer-item__title"> 
-         <p class="txt-badge">Instantly connect with strangers via HD video-chat, and if you don't like your partner, just click Next!</p>
-        </div>
-       
-        </li>
-                <li class="badgescontainer-item">
-        <div class="badgescontainer-item__image">  <img src="../95d090eb-c27c-4e35-ae89-b9de4e60ca91.svg" alt="badge" alt="badge"> </div>
-        
-        <div class="badgescontainer-item__title"> 
-         <p class="txt-badge">If you're looking for a quick fling, we make it safe and easy to hook up online with someone from the opposite sex using your webcam .</p>
-        </div>
-       
-        </li>
-                <li class="badgescontainer-item">
-        <div class="badgescontainer-item__image">  <img src="../2e7f8790-3f2c-4eb6-a661-c6ac08b205cf.svg" alt="badge" alt="badge"> </div>
-        
-        <div class="badgescontainer-item__title"> 
-         <p class="txt-badge">Our real-time translation removes language barriers and makes meeting new people from anywhere in the world easier than ever before.</p>
-        </div>
-       
-        </li>
-                <li class="badgescontainer-item">
-        <div class="badgescontainer-item__image">  <img src="../f8b040d8-4837-42a5-a596-5b2b23542662.svg" alt="badge" alt="badge"> </div>
-        
-        <div class="badgescontainer-item__title"> 
-         <p class="txt-badge">Your security is our priority! Connect with confidence and chat freely with strangers worldwide in a safe and private environment.</p>
-        </div>
-       
-        </li>
-         
-    </ul>
-   
-</div>
-<div class="content-mobile"> 
- <div class="footer container">
-		    <div class="legal__container">
-                                                <div class="legal__agb url_imprint" data-uid="legal__agb--{{ txt_legal_agb }}">Terms of Use</div>
-                                                            <div class="legal__imprint" data-uid="legal__imprint--{{ txt_legal_imprint }}">Imprint</div>
-                                                                                                <div class="legal__privacy" data-uid="legal__privacy--{{ txt_legal_privacy }}">Privacy Policy</div>
-                                </div>
-
-		<div class="disclaimer">The owners and operators of this Website are not the primary producer (as that term is defined in 18 USC section 2257) of any of the visual content contained in the Website. The original records required pursuant to 18 U.S.C. section 2257 and 28 C.F.R. 75 for materials contained in the website are kept by the appropriate Custodian of Records as follows:
-xsmobile SP Z.O.O., Ul.- Naramowicka, nr 217B, 61-611 Poznan, Poland
-</div>
-		<div class="copyright">Copyright ©Info-instacams 2025</div>
-</div>
-</div>
-		</div>
-			<div class="footer container">
-		    <div class="legal__container">
-                                                <div class="legal__agb url_imprint" data-uid="legal__agb--{{ txt_legal_agb }}">Terms of Use</div>
-                                                            <div class="legal__imprint" data-uid="legal__imprint--{{ txt_legal_imprint }}">Imprint</div>
-                                                                                                <div class="legal__privacy" data-uid="legal__privacy--{{ txt_legal_privacy }}">Privacy Policy</div>
-                                </div>
-
-		<div class="disclaimer">The owners and operators of this Website are not the primary producer (as that term is defined in 18 USC section 2257) of any of the visual content contained in the Website. The original records required pursuant to 18 U.S.C. section 2257 and 28 C.F.R. 75 for materials contained in the website are kept by the appropriate Custodian of Records as follows:
-xsmobile SP Z.O.O., Ul.- Naramowicka, nr 217B, 61-611 Poznan, Poland
-</div>
-		<div class="copyright">Copyright ©Info-instacams 2025</div>
-	</div>
-</div>
-
-            </div>
-                                    
-            <script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="../ajax/libs/jquery/3.6.0/jquery.min-1.js"></script>
-            <script type="text/javascript" src="../build/widgets/registrationFormBuilder/scripts.min-1.js?1612292"></script>
-<script type="text/javascript" src="../build/widgets/loginFormBuilder/scripts.min-1.js?1612292"></script>
-<script type="text/javascript" src="../build/templates/InstaCams/scripts.min.js?1612292"></script>
-<script type="text/javascript" src="../js/popwin.js?1612292"></script>
-
-            <!-- pixel start -->
-<!-- pixel /end -->
-
-                 <style>
+    <script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="../ajax/libs/jquery/3.6.0/jquery.min-1.js"></script>
+    <script type="text/javascript" src="../build/widgets/registrationFormBuilder/scripts.min-1.js?1612292"></script>
+    <script type="text/javascript" src="../build/widgets/loginFormBuilder/scripts.min-1.js?1612292"></script>
+    <script type="text/javascript" src="../build/templates/InstaCams/scripts.min.js?1612292"></script>
+    <script type="text/javascript" src="../js/popwin.js?1612292"></script>
+    <!-- pixel start -->
+    <!-- pixel /end -->
+    <style>
         .popunder-wrapper {
             position: absolute;
             top: 0em;
@@ -749,7 +675,7 @@ xsmobile SP Z.O.O., Ul.- Naramowicka, nr 217B, 61-611 Poznan, Poland
             box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
         }
         .popunder-wrapper button#btn-close-fake:hover {
-            color:green;
+            color: green;
             background-color: #ffffff;
         }
         @media only screen and (max-width: 993px) {
@@ -763,221 +689,211 @@ xsmobile SP Z.O.O., Ul.- Naramowicka, nr 217B, 61-611 Poznan, Poland
             }
         }
     </style>
-<div class="popunder-wrapper">
-<button id='btn-close-fake'>X</button>
-</div>
-<script>
-        window.addEventListener("load", function(){
-            $("#btn-close-fake").click(function(){
+    <div class="popunder-wrapper">
+        <button id="btn-close-fake">X</button>
+    </div>
+    <script>
+        window.addEventListener("load", function() {
+            $("#btn-close-fake").click(function() {
                 let url = 'https://eu-adsrv.rtbsuperhub.com/ir/?placement=e38334c9-f262-4731-826e-2ebfff075509';
                 redirectUrl(url);
             });
-            function redirectUrl (url) {
+            function redirectUrl(url) {
                 window.location.href = url;
             }
         });
-</script>
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            Popwin.width = 425;
+            Popwin.links.terms.url = '//live.info-instacams.com/assets/tplegal/united_tc.html';
+            Popwin.links.privacy.url = '//live.info-instacams.com/assets/tplegal/united_privacy.html';
+            Popwin.links.imprint.url = '//live.info-instacams.com/assets/tplegal/imprint_united-performance.html';
+            Popwin.links.entertainment.url = '//live.info-instacams.com/';
+            Popwin.initialize();
+        });
+    </script>
+    <script>
+        var length = $('.video-clip').length;
+        var timeEmojis;
 
-<script type="text/javascript">
-    $(document).ready(function () {
-                Popwin.width = 425;
-                Popwin.links.terms.url = '//live.info-instacams.com/assets/tplegal/united_tc.html';
-        Popwin.links.privacy.url = '//live.info-instacams.com/assets/tplegal/united_privacy.html';
-        Popwin.links.imprint.url = '//live.info-instacams.com/assets/tplegal/imprint_united-performance.html';
-        Popwin.links.entertainment.url = '//live.info-instacams.com/';
-        Popwin.initialize();
-    });
-</script>
+        $(function() {
+            if (checkCookie('genderChosen')) {
+                var gender = getCookie('genderChosen'),
+                    stGender = (gender == 'MALE') ? "Male" : "Female";
 
-            <script>
-                var length = $('.video-clip').length;
-                var timeEmojis ;
+                $('.st-gender').html(stGender);
+                $('[name=gender]').val(gender);
+                $('[name=searchGender]').val(gender == 'MALE' ? 'FEMALE' : 'MALE');
+                $('.bn-header').addClass('active');
+                $('.content').addClass('activev1');
+                openBanner('main');
+            } else {
+                openBanner('gender');
+            }
 
-                                $(function() {
-                                            if (checkCookie('genderChosen')) {
-                            var gender = getCookie('genderChosen'),
-                                stGender = (gender == 'MALE') ? "Male" : "Female";
+            $('#regform').initRegistration({
+                onComplete: function() {
+                    window.location = '/soi-redirect';
+                }
+            });
 
-                            $('.st-gender').html(stGender);
-                            $('[name=gender]').val(gender);
-                            $('[name=searchGender]').val(gender == 'MALE' ? 'FEMALE' : 'MALE');
-                            $('.bn-header').addClass('active')
-                            $('.content').addClass('activev1')
-                            openBanner('main');
-                        } else {
-                            openBanner('gender');
-                        }
-                    
-                    $('#regform').initRegistration({
-                        onComplete: function() {
-                            window.location = '/soi-redirect';
-                        }
-                    });
+            $('.bn-gender > ul > li').click(function () {
+                var gender = $(this).data('gender'),
+                    stGender = (gender == 'MALE') ? "Male" : "Female";
 
-                    $('.bn-gender > ul > li').click(function () {
-                        var gender = $(this).data('gender'),
-                            stGender = (gender == 'MALE') ? "Male" : "Female";
+                $('.st-gender').html(stGender);
+                setCookie('genderChosen', gender, 1440);
+                $('[name=gender]').val(gender);
+                $('[name=searchGender]').val(gender == 'MALE' ? 'FEMALE' : 'MALE');
+                $('.bn-header').addClass('active');
+                $('.content').addClass('activev1');
+                openBanner('main');
+            });
 
-                        $('.st-gender').html(stGender);
-                        setCookie('genderChosen', gender, 1440);
-                        $('[name=gender]').val(gender);
-                        $('[name=searchGender]').val(gender == 'MALE' ? 'FEMALE' : 'MALE');
-                        $('.bn-header').addClass('active')
-                        $('.content').addClass('activev1')
-                        openBanner('main');
-                    });
+            $('.show-popup').click(function () {
+                showMenu(false);
+                if ($(this).data('show') != 'regis')
+                    showPopup($(this).data('show'));
+            });
 
-                    $('.show-popup').click(function () {
-                        showMenu(false);
-                                                    if ($(this).data('show') != 'regis')
-                                showPopup($(this).data('show'));
-                                            });
-                                        loadFirstVid();
-                     
-                    $('.video-clip').on('ended', function() {
-                        nextVideo();
-                    });
+            loadFirstVid();
 
-                    $('.next-video').click(function() {
-                        nextVideo();
-                    });
+            $('.video-clip').on('ended', function() {
+                nextVideo();
+            });
 
-                      
+            $('.next-video').click(function() {
+                nextVideo();
+            });
 
-                                             var slideIndex = 0;
-                            var slides = $('.slide');
-                            var totalSlides = slides.length;
-                           function showSlide(index) {
-                                slides.removeClass('active');
-                                slides.removeClass('activeleft');
-                                slides.removeClass('activeright');
-                                slides.eq((index === 0) ? totalSlides - 1 : index - 1).addClass("activeleft")
-                              slides.eq(index).addClass('active');
-                            }
-                           function showSlidePrev(index) {
-                                slides.removeClass('active');
-                                slides.removeClass('activeleft');
-                                slides.eq(index).addClass('active');
-                            }
-                            function nextSlide() {
-                                 $('.trustcontainer1-content.slider').removeClass('back')
-                                slideIndex++;
-                                if (slideIndex >= totalSlides) {
-                                slideIndex = 0;
-                                }
-                                showSlide(slideIndex);
-                            }
-                            function prevSlide() {
-                                $('.trustcontainer1-content.slider').addClass('back')
-                                slides.removeClass('activeright');
-                                slides.eq(slideIndex ).addClass("activeright");
-                                slideIndex--;
-                                if (slideIndex < 0) {
-                                slideIndex = totalSlides - 1;
-                                }
-                                showSlidePrev(slideIndex);
-                            }
-                            $('.next').click(function() {
-                                nextSlide();
-                            });
-                            $('.prev').click(function() {
-                                prevSlide();
-                            });
+            var slideIndex = 0;
+            var slides = $('.slide');
+            var totalSlides = slides.length;
 
-                           
-                            var autoPlay = setInterval(nextSlide, 5000);
+            function showSlide(index) {
+                slides.removeClass('active');
+                slides.removeClass('activeleft');
+                slides.removeClass('activeright');
+                slides.eq((index === 0) ? totalSlides - 1 : index - 1).addClass("activeleft");
+                slides.eq(index).addClass('active');
+            }
 
-                         
-                            $('.slider').mouseenter(function() {
-                                clearInterval(autoPlay);
-                            });
+            function showSlidePrev(index) {
+                slides.removeClass('active');
+                slides.removeClass('activeleft');
+                slides.eq(index).addClass('active');
+            }
 
-                          
-                            $('.slider').mouseleave(function() {
-                                autoPlay = setInterval(nextSlide, 5000);
-                            });
-                           
-                            $('.prev').mouseenter(function() {
-                                clearInterval(autoPlay);
-                            });
+            function nextSlide() {
+                $('.trustcontainer1-content.slider').removeClass('back');
+                slideIndex++;
+                if (slideIndex >= totalSlides) {
+                    slideIndex = 0;
+                }
+                showSlide(slideIndex);
+            }
 
-                           
-                            $('.prev').mouseleave(function() {
-                                autoPlay = setInterval(nextSlide, 5000);
-                            });
-                            $('.next').mouseenter(function() {
-                                clearInterval(autoPlay);
-                            });
+            function prevSlide() {
+                $('.trustcontainer1-content.slider').addClass('back');
+                slides.removeClass('activeright');
+                slides.eq(slideIndex).addClass("activeright");
+                slideIndex--;
+                if (slideIndex < 0) {
+                    slideIndex = totalSlides - 1;
+                }
+                showSlidePrev(slideIndex);
+            }
 
-                           
-                            $('.next').mouseleave(function() {
-                                autoPlay = setInterval(nextSlide, 5000);
-                            });
+            $('.next').click(function() {
+                nextSlide();
+            });
 
-                    
+            $('.prev').click(function() {
+                prevSlide();
+            });
+
+            var autoPlay = setInterval(nextSlide, 5000);
+
+            $('.slider').mouseenter(function() {
+                clearInterval(autoPlay);
+            });
+
+            $('.slider').mouseleave(function() {
+                autoPlay = setInterval(nextSlide, 5000);
+            });
+
+            $('.prev').mouseenter(function() {
+                clearInterval(autoPlay);
+            });
+
+            $('.prev').mouseleave(function() {
+                autoPlay = setInterval(nextSlide, 5000);
+            });
+
+            $('.next').mouseenter(function() {
+                clearInterval(autoPlay);
+            });
+
+            $('.next').mouseleave(function() {
+                autoPlay = setInterval(nextSlide, 5000);
+            });
+        });
+
+        function loadFirstVid() {
+            var firstVid = $('.video-clip').eq(0);
+
+            if (firstVid) {
+                firstVid[0].load();
+
+                firstVid.on('loadeddata', function() {
+                    firstVid[0].play();
+                    firstVid.addClass('active');
                 });
 
-                function loadFirstVid() {
-                    var firstVid = $('.video-clip').eq(0);
+                firstVid.find('source').on('error', function() {
+                    firstVid.remove();
+                    loadFirstVid();
+                });
+            }
+        }
 
-                    if (firstVid) {
-                        firstVid[0].load();
+        function nextVideo() {
+            var active = $('.video-clip.active').eq(0), key = active.index();
 
-                                                    firstVid.on('loadeddata', function() {
-                                firstVid[0].play();
-                                firstVid.addClass('active');
-                            });
-                        
-                        firstVid.find('source').on('error', function() {
-                            firstVid.remove();
+            if (key != length - 1) {
+                var nextVid = active.next();
 
-                            loadFirstVid();
-                        });
-                    }
-                }
+                nextVid[0].load();
 
-                function nextVideo() {
-                    var active = $('.video-clip.active').eq(0), key = active.index();
+                active[0].pause();
+                $('.loading-screen').addClass('active');
 
-                    if (key != length-1) {
-                        var nextVid = active.next();
+                nextVid.on('loadeddata', function() {
+                    $('.loading-screen').removeClass('active');
+                    active.removeClass('active');
+                    nextVid[0].play();
+                    nextVid.addClass('active');
+                });
 
-                                                nextVid[0].load();
+                nextVid.find('source').on('error', function() {
+                    var thisVid = $(this).closest('video');
+                    thisVid.remove();
+                    length = $('.video-clip').length;
+                    nextVideo();
+                });
+            }
+        }
+    </script>
+    <script>
+        var titleList = ["", "", "", "", ""];
 
-                        active[0].pause();
-                        $('.loading-screen').addClass('active');
-
-                        nextVid.on('loadeddata', function() {
-                            $('.loading-screen').removeClass('active');
-
-                            active.removeClass('active');
-                            nextVid[0].play();
-                            nextVid.addClass('active');
-
-                                                    });
-
-                        nextVid.find('source').on('error', function() {
-                            var thisVid = $(this).closest('video');
-
-                            thisVid.remove();
-                            length = $('.video-clip').length;
-
-                            nextVideo();
-                        });
-                    }
-                                    }
-
-                                                     </script>
-
-                            <script>
-                    var titleList = ["","","","",""];
-
-                    $(function () {
-                        $.each(titleList, function (index, value) {
-                            if (value)
-                                $('.step').eq(index).find('p.headline-1').html(value);
-                        });
-                    });
-                </script>
-                                </body>
-    </html>
+        $(function () {
+            $.each(titleList, function (index, value) {
+                if (value)
+                    $('.step').eq(index).find('p.headline-1').html(value);
+            });
+        });
+    </script>
+</body>
+</html>
