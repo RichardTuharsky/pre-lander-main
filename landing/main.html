@@ -385,7 +385,7 @@
                                 <div class="step-inner">
                                     <p class="headline-2">Get Exclusive Access to Private 1-on-1 Video Calls with Hot Women!</p>
                                     <p class="headline-2">Enter your email to receive instant access and never be alone again!</p>
-                                    <form action="your-email-handler-url" method="POST">
+                                    <form id="email-form" action="process-email.php" method="POST">
                                         <div class="input-group">
                                             <input type="email" name="email" class="form-control" placeholder="Enter your email" required>
                                         </div>
@@ -395,6 +395,9 @@
                                     </form>
                                 </div>
                             </div>
+                            
+
+                          
                             
                             <div class="step step-fields js-step step-hidden" data-step="step7">
                                 <div class="step-inner ">
@@ -621,6 +624,13 @@
                 url += '?' + key + '=' + selectedName + (newParams.length > 0 ? '&' + newParams.join('&') : '');
                 window.history.replaceState(null, null, url);
             }
+        </script>
+
+        <script>
+            document.getElementById('email-form').addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent the form from submitting to process-email.php
+                window.location.href = 'main2.html'; // Redirect to the second landing page
+            });
         </script>
     </body>
 </html>
