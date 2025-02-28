@@ -289,21 +289,21 @@ button:disabled {
 .btn-group .btn-choise4,
 .btn-group .btn-choise5,
 .btn-group .btn-choise6 {
-    background: transparent linear-gradient(180deg, #349fe7 0%, #2374AB 100%) 0% 0% no-repeat padding-box;
+    background: transparent linear-gradient(180deg, #1ac85b 0%, #0dac6f 100%) 0% 0% no-repeat padding-box;
 }
 
 .btn-pink {
     color: #fff;
-    background: transparent linear-gradient(180deg, #391d39 0%, #231123 100%) 0% 0% no-repeat padding-box;
+    background: transparent linear-gradient(180deg, #6f1c8d 0%, #540D6E 100%) 0% 0% no-repeat padding-box;
 }
 
 .btn-green {
-    background: transparent linear-gradient(180deg, #349fe7 0%, #2374AB 100%) 0% 0% no-repeat padding-box;
+    background: transparent linear-gradient(180deg, #1ac85b 0%, #0dac6f 100%) 0% 0% no-repeat padding-box;
     color: #fff;
 }
 
 .btn-green-bold {
-    background: transparent linear-gradient(180deg, #349fe7 0%, #2374AB 100%) 0% 0% no-repeat padding-box;
+    background: transparent linear-gradient(180deg, #1ac85b 0%, #0dac6f 100%) 0% 0% no-repeat padding-box;
 }
 
 @media (min-width: 568px) {
@@ -793,7 +793,7 @@ a {
 
 .wrapper .content-wrapper .start-chat {
     margin-top: 1em;
-    background: transparent linear-gradient(180deg, #349fe7 0%, #2374AB 100%) 0% 0% no-repeat padding-box;
+    background: transparent linear-gradient(180deg, #1ac85b 0%, #0dac6f 100%) 0% 0% no-repeat padding-box;
     padding: 1em 1.5em;
     border: none;
     display: inline-flex;
