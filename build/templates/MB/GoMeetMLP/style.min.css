@@ -19,7 +19,7 @@ body {
   margin: 0;
   text-align: center;
   color: #fff;
-  background: linear-gradient(105deg, #FFBE00 0%, #FFDC00 100%) no-repeat;
+  background: linear-gradient(105deg, #2B2B2B 0%, #2B2B2B 100%) no-repeat;
 }
 
 img, video {
@@ -736,17 +736,30 @@ a {
     width: 100%;
 }
 
+.logo {
+    position: absolute;
+    top: 0;        /* Moves the logo to the top of its container */
+    left: 2em;     /* Keeps the distance from the left edge */
+}
+
+.logo img {
+    height: 10em;       /* Sets the height */
+    max-width: 20em;    /* Limits the width */
+    object-fit: contain; /* Maintains aspect ratio */
+}
+
 .header .inner-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1em;
+    padding: 0.5em 1em; /* Reduced top/bottom padding from 1em to 0.5em */
     background-color: #2B2B2B;
 }
 
+/* Update logo size */
 .header .inner-header .logo img {
-    height: 3.80em;
-    max-width: 28em;
+    height: 2em; /* Reduced from 3.80em */
+    max-width: 14em; /* Reduced from 28em */
     object-fit: contain;
     filter: drop-shadow(0 0 0.2em rgba(0,0,0,0.75));
 }
@@ -755,15 +768,17 @@ a {
     display: none;
 }
 
+/* Adjust logo size for screens wider than 568px */
 @media (min-width: 568px) {
     .header .inner-header .logo img {
-        max-width: 35em;
+        max-width: 20em; /* Reduced from 35em */
     }
 }
 
+/* Adjust inner header padding for screens wider than 768px */
 @media (min-width: 768px) {
     .header .inner-header {
-        padding: 1.5em;
+        padding: 1em 1.5em; /* Adjusted from 1.5em to reduce vertical padding slightly */
     }
 }
 
@@ -785,6 +800,7 @@ a {
 .wrapper .content-wrapper .title {
     font-size: 3em;
 }
+
 
 .wrapper .content-wrapper .description {
     margin-top: 1em;
