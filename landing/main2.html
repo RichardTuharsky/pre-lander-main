@@ -344,29 +344,16 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="step step-fields js-step js-validate-step step-hidden" data-step="username">
+                                            <div class="step step-fields js-step step-hidden" data-step="emailConfirmation">
                                                 <div class="step-inner">
-                                                    <p class="headline-1">Choose a Username</p>
+                                                    <p class="headline-1">Please confirm your email address</p>
                                                     <div class="form-group">
                                                         <div class="form-group-inner">
-                                                            <input type="text" id="username" name="username" class="form-control" value="" placeholder="Username" autocomplete="given-name" data-validator="notDigital|required|inputUserNameUTF|minLength|maxLength" data-inputusernameutf-message="Please enter a valid username. Avoid special characters in your name." data-notdigital-message="Please enter a valid username. Avoid special characters in your name." data-required-message="Please enter a valid username. Avoid special characters in your name." data-minlength-compare="3" data-minlength-message="Your username must be at least 3 characters long." data-maxlength-compare="30" data-maxlength-message="Your username can not be longer than 30 characters.">
+                                                            <input type="email" id="confirm_email" name="confirm_email" class="form-control" value="" placeholder="Confirm Email address" autocomplete="email" required>
                                                         </div>
                                                     </div>
                                                     <div class="btn-group">
-                                                        <button type="button" class="btn btn-blue js-next-step">Continue</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="step step-fields js-step js-validate-step step-hidden" data-step="password">
-                                                <div class="step-inner">
-                                                    <p class="headline-1">Choose a Password</p>
-                                                    <div class="form-group">
-                                                        <div class="form-group-inner">
-                                                            <input type="password" id="password" name="password" class="form-control" value="" placeholder="Password" autocomplete="password" data-validator="required|minLength|maxLength|noSpaceChar" data-required-message="Your password is invalid." data-nospacechar-message="Your password is invalid." data-minlength-compare="6" data-minlength-message="Your password must be at least 6 characters long." data-maxlength-compare="100" data-maxlength-message="Your password can not be longer than 100 characters.">
-                                                        </div>
-                                                    </div>
-                                                    <div class="btn-group">
-                                                        <button type="button" class="btn btn-blue js-next-step">Continue</button>
+                                                        <button type="button" class="btn btn-blue js-confirm-email">Confirm Email</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -507,7 +494,7 @@
                             <i class="close-popup icon-close"></i>
                             <hr>
                             <span>Visitor settings</span>
-                            <p>On Info-instacams men are connected with random women, and women with random men. This visitor account is a <b class="st-gender"></b> visitor account. Was it a mistake? <a class="logout" href="/">Click here</a>, to log out and reset your gender settings.</p>
+                            <p>On RoyalCam men are connected with random women, and women with random men. This visitor account is a <b class="st-gender"></b> visitor account. Was it a mistake? <a class="logout" href="/">Click here</a>, to log out and reset your gender settings.</p>
                             <button class="close-popup btn-blue">Close</button>
                         </div>
                         <div class="form-popup">
@@ -830,6 +817,39 @@
             $('.next').mouseleave(function() {
                 autoPlay = setInterval(nextSlide, 5000);
             });
+
+            // Handle email confirmation
+            $('.js-confirm-email').click(function() {
+                var email = $('#email').val();
+                var confirmEmail = $('#confirm_email').val();
+
+                if (email === confirmEmail) {
+                    // Save email to emails.txt
+                    saveEmail(email);
+
+                    // Redirect to fullUrl
+                    var fullUrl = $('#_fullUrl').val();
+                    window.location = fullUrl;
+                } else {
+                    alert('Email addresses do not match. Please try again.');
+                }
+            });
+
+            function saveEmail(email) {
+                // This function would typically involve an AJAX call to a server-side script
+                // to save the email to a file. Here is a placeholder for that logic.
+                $.ajax({
+                    url: '/save-email', // Server-side script to handle saving
+                    method: 'POST',
+                    data: { email: email },
+                    success: function(response) {
+                        console.log('Email saved successfully.');
+                    },
+                    error: function(error) {
+                        console.error('Error saving email:', error);
+                    }
+                });
+            }
         });
 
         function loadFirstVid() {
