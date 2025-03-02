@@ -7,7 +7,7 @@
     <meta http-equiv="content-language" content="en-GB">
     <meta name="description" content="info-instacams.com">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <link rel="icon" type="image/png" href="../assets/img/_favicons/instacams_fav-1.png?1612292">
+    <link rel="icon" type="image/png" href="../assets/img/_favicons/favicon.png">
     <link rel="apple-touch-icon" href="../img/_patterns/apple-touch-icon-1.png?1612292">
     <meta name="logo" content="https://lpmedia.servefilesonly.com/img/_logos/logo_instacams_w.svg">
     <meta name="parentHost" content="info-instacams.com">
@@ -108,14 +108,20 @@
     <style>
         .video-frame.isEmojis .next-video,
         .bn-main .bn-body.start-searching .body-3 .video-frame .video-btns button.next-video {
-            background-color: #c63a82;
+            background-color: #FEBD05;
             color: #fff;
         }
         .video-frame .next-video {
-            background-color: #c63a82;
+            background-color: #FEBD05;
             color: #fff;
             font-size: 1.18em;
             padding: 0.3em 0.7em;
+        }
+        .show-menu.icon-burger-bars {
+            color: #FEBD05;
+        }
+        .show-popup.icon-user.cascade1 {
+            color: #FEBD05
         }
     </style>
     <link rel="stylesheet" href="../build/templates/InstaCams/badges.min.css?1612292">
@@ -136,14 +142,14 @@
                     </ul>
                 </div>
                 <div class="bn-loading active">
-                    <img src="../img/_logos/logoroyal.png" alt="" width="100%" height="100%">
+                    <img src="../img/_logos/logoroyal-dark.png" alt="" width="100%" height="100%">
                     <span>Loading...</span>
                 </div>
                 <div class="bn-main">
                     <div class="bn-head">
                         <div class="head-mobile">
                             <i class="show-menu icon-burger-bars"></i>
-                            <img src="../img/_logos/logo_instacams.svg" alt="info-instacams.com" width="100%" height="100%">
+                            <img src="../img/_logos/logoroyal.png" alt="" width="100%" height="100%">
                             <i class="show-popup icon-user cascade1" data-show="login"></i>
                             <i class="close-menu icon-close"></i>
                         </div>
@@ -482,11 +488,7 @@
                                         <div class="content-mobile">
                                             <div class="footer container">
                                                 <div class="legal__container">
-                                                    <div class="legal__agb url_imprint" data-uid="legal__agb--{{ txt_legal_agb }}">Terms of Use</div>
-                                                    <div class="legal__imprint" data-uid="legal__imprint--{{ txt_legal_imprint }}">Imprint</div>
-                                                    <div class="legal__privacy" data-uid="legal__privacy--{{ txt_legal_privacy }}">Privacy Policy</div>
                                                 </div>
-                                                <div class="disclaimer">The owners and operators of this Website are not the primary producer (as that term is defined in 18 USC section 2257) of any of the visual content contained in the Website. The original records required pursuant to 18 U.S.C. section 2257 and 28 C.F.R. 75 for materials contained in the website are kept by the appropriate Custodian of Records as follows: xsmobile SP Z.O.O., Ul.- Naramowicka, nr 217B, 61-611 Poznan, Poland</div>
                                                 <div class="copyright">Copyright © 2025</div>
                                             </div>
                                         </div>
@@ -686,11 +688,9 @@
                 width: 2em;
                 height: 2em;
                 z-index: 0;
-            }
-        }
+    
     </style>
     <div class="popunder-wrapper">
-        <button id="btn-close-fake">X</button>
     </div>
     <script>
         window.addEventListener("load", function() {

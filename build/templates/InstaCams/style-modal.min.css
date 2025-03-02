@@ -926,6 +926,7 @@ a {
   justify-content: space-between;
   align-items: center;
   padding: .5em 1em;
+  background-color: #2B2B2B;
 }
 
 .head-mobile img {
@@ -1113,7 +1114,6 @@ a {
     justify-content: center;
     align-items: center;
     min-height: 7em;
-    background: url("../../../img/_patterns/cubes.svg") no-repeat center center;
     -webkit-background-size: auto 17em;
     -moz-background-size: auto 17em;
     -o-background-size: auto 17em;
