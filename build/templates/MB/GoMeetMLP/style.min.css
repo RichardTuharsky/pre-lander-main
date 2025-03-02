@@ -831,7 +831,7 @@ a {
 
 .wrapper .content-blur {
     position: absolute;
-    background: linear-gradient(to top, #f4c846 15%, rgba(64,7,96,0.505882)) no-repeat padding-box;
+    background: linear-gradient(to top, #2B2B2B 15%, rgba(64,7,96,0.505882)) no-repeat padding-box;
     top: 0;
     left: 0;
     width: 100%;
@@ -1568,7 +1568,7 @@ input[type="email"] {
 .menu-desktop .menu-list.desktop li {
     cursor: pointer;
     padding: 1em;
-    background: #FFDC00;
+    background: #2B2B2B;
     border-radius: 50%;
 }
 
@@ -1613,14 +1613,14 @@ input[type="email"] {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    background-color: #F4C846;
+    background-color: #2B2B2B;
     position: relative;
 }
 
 .menu .menu-list li {
     cursor: pointer;
     padding: 1em;
-    background: #FC60A8;
+    background: #FFBD02;
     border-radius: 50%;
 }
 

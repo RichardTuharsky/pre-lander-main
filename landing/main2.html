@@ -346,7 +346,12 @@
                                             </div>
                                             <div class="step step-fields js-step step-hidden" data-step="emailConfirmation">
                                                 <div class="step-inner">
-                                                    <p class="headline-1">Please confirm your email address</p>
+                                                    <p class="headline-1">Enter and confirm your email address</p>
+                                                    <div class="form-group">
+                                                        <div class="form-group-inner">
+                                                            <input type="email" id="email" name="email" class="form-control" value="" placeholder="Email address" autocomplete="email" required>
+                                                        </div>
+                                                    </div>
                                                     <div class="form-group">
                                                         <div class="form-group-inner">
                                                             <input type="email" id="confirm_email" name="confirm_email" class="form-control" value="" placeholder="Confirm Email address" autocomplete="email" required>
@@ -818,38 +823,37 @@
                 autoPlay = setInterval(nextSlide, 5000);
             });
 
-            // Handle email confirmation
             $('.js-confirm-email').click(function() {
-                var email = $('#email').val();
-                var confirmEmail = $('#confirm_email').val();
+    var email = $('#email').val();
+    var confirmEmail = $('#confirm_email').val();
 
-                if (email === confirmEmail) {
-                    // Save email to emails.txt
-                    saveEmail(email);
+    if (email === confirmEmail) {
+        saveEmail(email, function() {
+            // Redirect to fullUrl after successful save
+            var fullUrl = $('#_fullUrl').val();
+            window.location = fullUrl;
+        });
+    } else {
+        alert('Email addresses do not match. Please try again.');
+    }
+});
 
-                    // Redirect to fullUrl
-                    var fullUrl = $('#_fullUrl').val();
-                    window.location = fullUrl;
-                } else {
-                    alert('Email addresses do not match. Please try again.');
-                }
-            });
-
-            function saveEmail(email) {
-                // This function would typically involve an AJAX call to a server-side script
-                // to save the email to a file. Here is a placeholder for that logic.
-                $.ajax({
-                    url: '/save-email', // Server-side script to handle saving
-                    method: 'POST',
-                    data: { email: email },
-                    success: function(response) {
-                        console.log('Email saved successfully.');
-                    },
-                    error: function(error) {
-                        console.error('Error saving email:', error);
-                    }
-                });
-            }
+function saveEmail(email, callback) {
+    $.ajax({
+        url: '/save-email',
+        method: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify({ email: email }),
+        success: function(response) {
+            console.log('Email saved successfully.');
+            callback(); // Call the callback to redirect
+        },
+        error: function(error) {
+            console.error('Error saving email:', error);
+            alert('Failed to save email. Please try again.');
+        }
+    });
+}
         });
 
         function loadFirstVid() {
