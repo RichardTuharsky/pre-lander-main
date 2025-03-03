@@ -824,36 +824,46 @@
             });
 
             $('.js-confirm-email').click(function() {
-    var email = $('#email').val();
-    var confirmEmail = $('#confirm_email').val();
+                var email = $('#email').val();
+                var confirmEmail = $('#confirm_email').val();
 
-    if (email === confirmEmail) {
-        saveEmail(email, function() {
-            // Redirect to fullUrl after successful save
-            var fullUrl = $('#_fullUrl').val();
-            window.location = fullUrl;
-        });
-    } else {
-        alert('Email addresses do not match. Please try again.');
-    }
-});
+                if (email === confirmEmail) {
+                    // Check if email is valid
+                    if (validateEmail(email)) {
+                        saveEmail(email, function() {
+                            // Redirect to fullUrl after successful save
+                            var fullUrl = $('#_fullUrl').val();
+                            window.location = fullUrl;
+                        });
+                    } else {
+                        alert('Please enter a valid email address.');
+                    }
+                } else {
+                    alert('Email addresses do not match. Please try again.');
+                }
+            });
 
-function saveEmail(email, callback) {
-    $.ajax({
-        url: '/save-email',
-        method: 'POST',
-        contentType: 'application/json',
-        data: JSON.stringify({ email: email }),
-        success: function(response) {
-            console.log('Email saved successfully.');
-            callback(); // Call the callback to redirect
-        },
-        error: function(error) {
-            console.error('Error saving email:', error);
-            alert('Failed to save email. Please try again.');
-        }
-    });
-}
+            function validateEmail(email) {
+                var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                return re.test(String(email).toLowerCase());
+            }
+
+            function saveEmail(email, callback) {
+                $.ajax({
+                    url: '/save-email',
+                    method: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({ email: email }),
+                    success: function(response) {
+                        console.log('Email saved successfully.');
+                        if (callback) callback(); // Call the callback to redirect
+                    },
+                    error: function(error) {
+                        console.error('Error saving email:', error);
+                        alert('Failed to save email. Please try again.');
+                    }
+                });
+            }
         });
 
         function loadFirstVid() {
