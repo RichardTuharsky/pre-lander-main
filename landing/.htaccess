@@ -1,4 +1,0 @@
-<Files "emails.txt">
-    Order Allow,Deny
-    Deny from all
-</Files>
