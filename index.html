@@ -395,8 +395,8 @@
                 let links = document.getElementsByTagName("a");
                 for (let i = 0; i < links.length; i++) {
                     if (links[i].href === linkToPopulate) {
-                        if ("/landing/chp8119" !== 'null') {
-                            links[i].href = "/landing/chp8119" + queryString;
+                        if ("index.html" !== 'null') {
+                            links[i].href = "index.html" + queryString;
                         } else {
                             links[i].href = linkToPopulate + queryString;
                         }
