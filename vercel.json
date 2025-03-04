@@ -1,0 +1,12 @@
+{
+    "routes": [
+        {
+            "landing": "/",
+            "dest": "/"
+        },
+        {
+            "landing": "/test",
+            "dest": "/"
+         }
+    ]
+}
