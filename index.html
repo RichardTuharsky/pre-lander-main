@@ -20,87 +20,7 @@
         <link href="../css?family=Roboto:300,400,700,900" rel="stylesheet">
         <link rel="stylesheet" href="../build/templates/MB/GoMeetMLP/style.min.css?1604289">
         
-        <script src="../sdks/OneSignalSDK.js" async=""></script>
-        <script>
-            var OneSignal = window.OneSignal || [];
-            OneSignal.push(function () {
-                OneSignal.init({
-                    appId: "28ed652a-1a73-4668-9be5-ee284c480ecd",
-                    notifyButton: {
-                        enable: false,
-                    },
-                    welcomeNotification: {
-                        disable: true
-                    },
-                    promptOptions: {
-                        slidedown: {
-                            prompts: [
-                                {
-                                    type: "push",
-                                    enabled: true,
-                                    autoPrompt: true,
-                                    text: {
-                                        actionMessage: "",
-                                        acceptButton: "",
-                                        cancelButton: "nie, ďakujem"
-                                    },
-                                    delay: {
-                                        pageViews: 0,
-                                        timeDelay: 0
-                                    }
-                                }
-                            ]
-                        }
-                    }
-                });
-
-                OneSignal.getUserId(function (id) {
-                    const queryString = window.location.search;
-                    const urlParams = new URLSearchParams(queryString);
-                    const oSig = urlParams.get('osig_externalid');
-
-                    if (id != null && !oSig) {
-                        let newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + 
-                            document.location.search + '&osig_externalid=' + id + '::' + OneSignal.config.appId;
-                        window.history.pushState({path: newurl}, '', newurl);
-                    }
-                });
-
-                OneSignal.on('subscriptionChange', async function (isSubscribed) {
-                    let osig_externalid = await OneSignal.getUserId();
-                    const queryString = window.location.search;
-                    const urlParams = new URLSearchParams(queryString);
-                    const name = urlParams.get('name');
-                    const uid = urlParams.get('uid');
-                    const campaign_lp = urlParams.get('campaign_lp');
-                    const ba = urlParams.get('ba');
-                    const product = urlParams.get('product');
-                    const oSig = urlParams.get('osig_externalid');
-
-                    if (osig_externalid != null && !oSig) {
-                        let newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + 
-                            document.location.search + '&osig_externalid=' + osig_externalid + '::' + OneSignal.config.appId;
-                        window.history.pushState({path: newurl}, '', newurl);
-                    }
-
-                    if (name != null) {
-                        OneSignal.sendTags({
-                            name: name,
-                            campaign_lp: campaign_lp,
-                            ba: ba,
-                            product: product,
-                        });
-                    }
-
-                    if (uid != null) {
-                        OneSignal.setExternalUserId(uid);
-                    }
-                });
-            });
-        </script>
-
-        <!--tracking analytics-->
-
+        
     </head>
 
     <body class="language-en">
@@ -409,7 +329,6 @@
                     }
                 }
             }
-            //tracking na kliky
         </script>
         
         <script>
@@ -584,5 +503,8 @@
                 window.location.href = 'main2.html'; // Redirect to the second landing page
             });
         </script>
+        <!-- START ExoClick Goal Tag | Second Campaign Pixel 1 html -->
+    <script type="application/javascript" src="https://a.exoclick.com/tag_gen.js" data-goal="91f1c5d1784c81d6ba414e0b71147c83" ></script>
+    <!-- END ExoClick Goal Tag | Second Campaign Pixel 1 html -->
     </body>
 </html>
